@@ -6,4 +6,6 @@
     <color name="greenTextColor">#07da5f</color>
     <color name="whiteTextColor">#FFFFFF</color>
     <color name="toolbarBgColor">#07da5f</color>
+    <color name="addPhotosTxtColor">#282828</color>
+    <color name="hintColor">#7D7B7B</color>
 </resources>

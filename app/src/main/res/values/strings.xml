@@ -16,4 +16,15 @@
     <string name="login">Login</string>
     <string name="urgent">Urgent</string>
     <string name="register_toolbar_txt">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name_hint">Your Full Name</string>
+    <string name="birthday_field">Birthday</string>
+    <string name="birthday_input_hint">dd/mm/yy</string>
+    <string name="email_input_hint">Your Email</string>
+    <string name="email_input_label">Email</string>
+    <string name="phone_number_field_label">Phone Number</string>
+    <string name="phone_number_field_hint">Your Phone Number</string>
+    <string name="location_adress_input_label">Location/Adress</string>
+    <string name="location_field_hint">Your Location</string>
+    <string name="next_button_txt">Next</string>
 </resources>
