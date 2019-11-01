@@ -40,7 +40,7 @@
     <dimen name="add_photos_txt_size">18sp</dimen>
     <dimen name="full_name_margin_start">25dp</dimen>
     <dimen name="full_name_margin_top">70dp</dimen>
-    <dimen name="full_name_txt_size">20sp</dimen>
+    <dimen name="label_field_txt_size">20sp</dimen>
     <dimen name="input_field_width">340dp</dimen>
     <dimen name="hint_left_padding">25dp</dimen>
     <dimen name="field_margin_top">10dp</dimen>
@@ -50,5 +50,6 @@
     <dimen name="next_button_margin_bottom">30dp</dimen>
     <dimen name="next_button_width">320dp</dimen>
     <dimen name="input_field_margin_end">35dp</dimen>
+    <dimen name="input_hint_text_size">20sp</dimen>
     <!--    sign up screen-->
 </resources>

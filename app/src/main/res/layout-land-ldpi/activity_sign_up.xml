@@ -55,12 +55,12 @@
                 android:id="@+id/fullname_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
                 android:layout_marginTop="@dimen/full_name_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/full_name"
                 android:textColor="@color/addPhotosTxtColor"
                 android:textSize="@dimen/label_field_txt_size"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/circle_image_view" />
 
@@ -84,7 +84,6 @@
                 android:id="@+id/birthday_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
                 android:layout_marginTop="@dimen/field_label_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/birthday_field"
@@ -113,13 +112,13 @@
                 android:id="@+id/email_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
                 android:layout_marginTop="@dimen/field_label_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/email_input_label"
                 android:textColor="@color/addPhotosTxtColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/birthday_input" />
 
             <EditText
@@ -142,13 +141,13 @@
                 android:id="@+id/phone_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
                 android:layout_marginTop="@dimen/field_label_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/phone_number_field_label"
                 android:textColor="@color/addPhotosTxtColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/full_name_margin_start"
                 app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
             <EditText
@@ -171,13 +170,13 @@
                 android:id="@+id/location_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
                 android:layout_marginTop="@dimen/field_label_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/location_adress_input_label"
                 android:textColor="@color/addPhotosTxtColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/full_name_margin_start"
                 app:layout_constraintTop_toBottomOf="@+id/phone_input" />
 
             <EditText
