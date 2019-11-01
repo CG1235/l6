@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Telemedicine</string>
+    <string name="lores_ipsum">Lorem ipsum dolor sit amet, conse ctetur adipiscingelit, t. Ut
+    enim ad veni am, quis nostrud exercitation ullamco</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_txt">Welcome</string>
+    <string name="login">Login</string>
+    <string name="urgent">Urgent</string>
+    <string name="register_toolbar_txt">Register</string>
+</resources>

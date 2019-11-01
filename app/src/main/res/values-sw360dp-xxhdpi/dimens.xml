@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    welcome activity 1080p-->
+    <dimen name="welcome_text_font_size">29sp</dimen>
+    <dimen name="welc_act_multiline_txt_size">16sp</dimen>
+    <dimen name="urgent_txt_size">16sp</dimen>
+    <dimen name="sign_up_txt_size">18dp</dimen>
+    <dimen name="sign_up_button_width">340dp</dimen>
+    <dimen name="sign_up_button_height">60dp</dimen>
+    <dimen name="welcome_text_view_width">320dp</dimen>
+    <dimen name="welcome_txt_layout_height">56dp</dimen>
+    <dimen name="welcome_txt_margin_top">130dp</dimen>
+    <dimen name="lores_txt_view_width">280dp</dimen>
+    <dimen name="lores_txt_view_height">80dp</dimen>
+    <dimen name="lores_txt_margin_top">190dp</dimen>
+    <dimen name="lores_txt_line_spacing">6sp</dimen>
+    <dimen name="sign_up_btn_margin_bottom">230dp</dimen>
+    <dimen name="login_btn_margin_bottom">130dp</dimen>
+    <dimen name="login_btn_text_size">16sp</dimen>
+    <dimen name="urgent_btn_margin_bottom">35dp</dimen>
+    <dimen name="land_lorem_txt_view_width">450dp</dimen>
+    <dimen name="land_lorem_txt_view_height">60dp</dimen>
+    <dimen name="land_welcome_txt_view_margin_top">20dp</dimen>
+    <dimen name="land_lorem_txt_margin_top">60dp</dimen>
+    <dimen name="land_sign_up_btn_margin_bottom">160dp</dimen>
+    <dimen name="land_login_btn_margin_bottom">80dp</dimen>
+    <dimen name="land_urgent_button_margin_bottom">20dp</dimen>
+    <!--    welcome activity-->
+</resources>
