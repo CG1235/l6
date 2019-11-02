@@ -199,11 +199,12 @@
             <Button
                 android:id="@+id/next_button"
                 android:layout_width="@dimen/next_button_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/next_button_height"
                 android:layout_marginTop="@dimen/next_button_margin_top"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/shape_green"
                 android:fontFamily="@font/proxima_nova_semibold"
+                android:textSize="@dimen/label_field_txt_size"
                 android:text="@string/next_button_txt"
                 android:textAllCaps="false"
                 android:textColor="@color/whiteTextColor"

@@ -27,4 +27,5 @@
     <string name="location_adress_input_label">Location/Adress</string>
     <string name="location_field_hint">Your Location</string>
     <string name="next_button_txt">Next</string>
+    <string name="telemedicine_splash">Telemedicine</string>
 </resources>

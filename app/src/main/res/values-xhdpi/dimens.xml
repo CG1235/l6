@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="splash_txt_size">45sp</dimen>
     <!--    welcome screen-->
     <dimen name="welcome_text_font_size">35sp</dimen>
     <dimen name="welc_act_multiline_txt_size">16sp</dimen>
