@@ -16,6 +16,7 @@ import android.widget.ImageView;
 public class SignUpActivity extends AppCompatActivity {
 
   private ImageView mBackArrow;
+  private String mActivityName;
 
   @Override
   public void finish() {
@@ -29,14 +30,19 @@ public class SignUpActivity extends AppCompatActivity {
     setContentView(R.layout.activity_sign_up);
 
     mBackArrow = findViewById(R.id.back_arrow_image_view);
+    mActivityName = getCallingActivity().getClassName();
+
     mBackArrow.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        startActivity(new Intent(SignUpActivity.this, WelcomeActivity.class));
-        finish();
+        if (mActivityName.equals("com.example.telemedicine.WelcomeActivity")){
+          startActivity(new Intent(SignUpActivity.this, WelcomeActivity.class));
+          finish();
+        }else if (mActivityName.equals("com.example.telemedicine.LoginActivity")){
+          startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+          finish();
+        }
       }
     });
-
-
   }
 }

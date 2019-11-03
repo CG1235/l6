@@ -28,4 +28,8 @@
     <string name="location_field_hint">Your Location</string>
     <string name="next_button_txt">Next</string>
     <string name="telemedicine_splash">Telemedicine</string>
+    <string name="email_adress_hint">Email Adress</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_txt">Login</string>
+    <string name="signup_btn_text">signup</string>
 </resources>

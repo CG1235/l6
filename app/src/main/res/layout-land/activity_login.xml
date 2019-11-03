@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_pattern"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/land_margin_top1"
+        android:text="@string/telemedicine_splash"
+        android:textColor="@color/whiteTextColor"
+        android:fontFamily="@font/proxima_nova_bold"
+        android:textSize="@dimen/signup_telemedicine_txt_size"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_login_input"
+        android:layout_width="@dimen/login_input_field_width"
+        android:layout_height="@dimen/login_input_field_height"
+        android:layout_marginTop="@dimen/land_margin_top2"
+        android:background="@drawable/edit_text_border_white"
+        android:ems="10"
+        android:fontFamily="@font/proxima_nova_regular"
+        android:inputType="textPersonName"
+        android:paddingLeft="@dimen/login_input_text_paddint_left"
+        android:text="@string/email_adress_hint"
+        android:textColor="@color/whiteTextColor"
+        android:textSize="@dimen/login_input_field_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/email_img_view"
+        android:layout_width="@dimen/login_input_icon_size"
+        android:layout_height="@dimen/login_input_icon_size"
+        android:layout_marginLeft="@dimen/login_field_icon_margin_left"
+        app:layout_constraintBottom_toBottomOf="@+id/email_login_input"
+        app:layout_constraintStart_toStartOf="@+id/email_login_input"
+        app:layout_constraintTop_toTopOf="@+id/email_login_input"
+        app:srcCompat="@drawable/ic_icon_email" />
+
+    <EditText
+        android:id="@+id/password_login_input"
+        android:layout_width="@dimen/login_input_field_width"
+        android:layout_height="@dimen/login_input_field_height"
+        android:layout_marginTop="@dimen/land_margin_top3"
+        android:background="@drawable/edit_text_border_white"
+        android:ems="10"
+        android:fontFamily="@font/proxima_nova_regular"
+        android:inputType="textPersonName"
+        android:paddingLeft="@dimen/login_input_text_paddint_left"
+        android:text="@string/password_hint"
+        android:textColor="@color/whiteTextColor"
+        android:textSize="@dimen/login_input_field_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_login_input" />
+
+    <ImageView
+        android:id="@+id/password_img_view"
+        android:layout_width="@dimen/login_input_icon_size"
+        android:layout_height="@dimen/login_input_icon_size"
+        android:layout_marginLeft="@dimen/login_field_icon_margin_left"
+        app:layout_constraintBottom_toBottomOf="@+id/password_login_input"
+        app:layout_constraintStart_toStartOf="@+id/password_login_input"
+        app:layout_constraintTop_toTopOf="@+id/password_login_input"
+        app:srcCompat="@drawable/ic_icon_lock" />
+
+    <Button
+        android:id="@+id/login_login_button"
+        android:layout_width="@dimen/login_input_field_width"
+        android:layout_height="@dimen/login_input_field_height"
+        android:layout_marginTop="@dimen/land_margin_top4"
+        android:background="@drawable/shape"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="@string/login_button_txt"
+        android:textAllCaps="false"
+        android:textColor="@color/greenTextColor"
+        android:textSize="@dimen/login_input_field_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/password_login_input" />
+
+    <Button
+        android:id="@+id/login_sign_up_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/land_margin_top5"
+        android:background="#00000000"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="@string/signup_btn_text"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/login_input_field_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/login_login_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
