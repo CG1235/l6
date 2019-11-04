@@ -16,12 +16,9 @@ public class SplashActivity extends AppCompatActivity {
 
     if (!mIsSplashLoaded){
       setContentView(R.layout.activity_splash);
-      new Handler().postDelayed(new Runnable() {
-        @Override
-        public void run() {
-          startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
-          finish();
-        }
+      new Handler().postDelayed(() -> {
+        startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
+        finish();
       }, 2000);
       mIsSplashLoaded = true;
     }else{

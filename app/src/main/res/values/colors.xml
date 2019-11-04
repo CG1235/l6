@@ -4,8 +4,10 @@
     <color name="colorPrimaryDark">#07da5f</color>
     <color name="colorAccent">#07da5f</color>
     <color name="greenTextColor">#07da5f</color>
-    <color name="whiteTextColor">#FFFFFF</color>
+    <color name="WhiteColor">#FFFFFF</color>
     <color name="toolbarBgColor">#07da5f</color>
-    <color name="addPhotosTxtColor">#282828</color>
+    <color name="DarkColor">#282828</color>
     <color name="hintColor">#7D7B7B</color>
+    <color name="colorAuxiliary">#EB5959</color>
+    <color name="navBarIconColor">#607d8a</color>
 </resources>

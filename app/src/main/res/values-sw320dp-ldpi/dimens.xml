@@ -13,7 +13,7 @@
     <dimen name="welcome_txt_margin_top">100dp</dimen>
     <dimen name="lores_txt_view_width">240dp</dimen>
     <dimen name="lores_txt_view_height">80dp</dimen>
-    <dimen name="lores_txt_margin_top">150dp</dimen>
+    <dimen name="lores_txt_margin_top">170dp</dimen>
     <dimen name="lores_txt_line_spacing">6sp</dimen>
     <dimen name="sign_up_btn_margin_bottom">175dp</dimen>
     <dimen name="login_btn_margin_bottom">100dp</dimen>
