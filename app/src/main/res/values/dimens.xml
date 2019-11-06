@@ -55,6 +55,8 @@
     <dimen name="input_hint_text_size">20sp</dimen>
     <dimen name="next_button_height">60dp</dimen>
 
+    <dimen name="next_btn_margin_bottom">30dp</dimen>
+
     <!--    sign up activity/login activity-->
 
     <dimen name="login_telemedicide_txt_margin_top">140dp</dimen>
@@ -88,5 +90,6 @@
     <dimen name="nav_bar_h_plus_shadow_h">58dp</dimen>
     <dimen name="fields_margin_start">25dp</dimen>
     <dimen name="field1_margin_top">40dp</dimen>
+
 
 </resources>

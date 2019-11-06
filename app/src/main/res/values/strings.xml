@@ -49,4 +49,5 @@
     <string name="where_is_your_location">Where is your location</string>
     <string name="description_optional">Description ( Optional)</string>
     <string name="describe_here">Describe Here</string>
+    <string name="request">Request</string>
 </resources>

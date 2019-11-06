@@ -168,7 +168,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/phone_txt_view" />
 
             <TextView
-                android:id="@+id/location_txt_view"
+                android:id="@+id/loc_txt_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/field_label_margin_top"
@@ -181,7 +181,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/phone_input" />
 
             <EditText
-                android:id="@+id/location_input"
+                android:id="@+id/loc_input"
                 android:layout_width="@dimen/input_field_width"
                 android:layout_height="@dimen/input_field_height"
                 android:layout_marginTop="@dimen/field_margin_top"
@@ -194,7 +194,7 @@
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/location_txt_view" />
+                app:layout_constraintTop_toBottomOf="@+id/loc_txt_view" />
 
             <Button
                 android:id="@+id/next_button"
@@ -209,9 +209,9 @@
                 android:textAllCaps="false"
                 android:textColor="@color/WhiteColor"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/location_input"
-                app:layout_constraintStart_toStartOf="@+id/location_input"
-                app:layout_constraintTop_toBottomOf="@+id/location_input" />
+                app:layout_constraintEnd_toEndOf="@+id/loc_input"
+                app:layout_constraintStart_toStartOf="@+id/loc_input"
+                app:layout_constraintTop_toBottomOf="@+id/loc_input" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline3"
