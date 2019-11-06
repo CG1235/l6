@@ -40,4 +40,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="home_toolbar_text">Home</string>
+    <string name="name">Name</string>
+    <string name="your_name_hint">Your Name</string>
+    <string name="disease">Disease</string>
+    <string name="what_is_your_illness">What is your illness</string>
+    <string name="location">Location</string>
+    <string name="where_is_your_location">Where is your location</string>
+    <string name="description_optional">Description ( Optional)</string>
+    <string name="describe_here">Describe Here</string>
 </resources>

@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_icon"
-        android:title="@string/nav_home"/>
+        android:title="@string/nav_home"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/nav_notification"
         android:icon="@drawable/ic_notification_icon"
-        android:title="@string/nav_notification"/>
+        android:title="@string/nav_notification"
+        app:showAsAction="always"/>
     <item
         android:icon="@android:color/transparent"
         android:title=""
-        android:enabled="false"/>
+        android:enabled="false"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/nav_schedule"
         android:icon="@drawable/ic_schedule_icon"
-        android:title="@string/nav_schedule"/>
+        android:title="@string/nav_schedule"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile_icon"
-        android:title="@string/nav_profile"/>
+        android:title="@string/nav_profile"
+        app:showAsAction="always"/>
 </menu>
