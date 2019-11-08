@@ -16,172 +16,172 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/add_req_fab"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/add_req_fab"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@+id/shadow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/shadow"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
 
-            <Button
-                android:id="@+id/very_urgent_button"
-                android:layout_width="@dimen/gr_rect_w"
-                android:layout_height="@dimen/gr_rect_h"
-                android:layout_marginTop="@dimen/gr_rect_margin_top"
-                android:background="@drawable/shape_transparent_green_border"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="Very urgent"
-                android:textAllCaps="true"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/login_btn_text_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <Button-->
+<!--                android:id="@+id/very_urgent_button"-->
+<!--                android:layout_width="@dimen/gr_rect_w"-->
+<!--                android:layout_height="@dimen/gr_rect_h"-->
+<!--                android:layout_marginTop="@dimen/gr_rect_margin_top"-->
+<!--                android:background="@drawable/shape_transparent_green_border"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="Very urgent"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/colorAccent"-->
+<!--                android:textSize="@dimen/login_btn_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <TextView
-                android:id="@+id/name_txt_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fields_margin_start"
-                android:layout_marginTop="@dimen/field1_margin_top"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="@string/name"
-                android:textColor="@color/DarkColor"
-                android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/very_urgent_button" />
+<!--            <TextView-->
+<!--                android:id="@+id/name_txt_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/fields_margin_start"-->
+<!--                android:layout_marginTop="@dimen/field1_margin_top"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="@string/name"-->
+<!--                android:textColor="@color/DarkColor"-->
+<!--                android:textSize="@dimen/label_field_txt_size"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/very_urgent_button" />-->
 
-            <EditText
-                android:id="@+id/name_input"
-                android:layout_width="@dimen/input_field_width"
-                android:layout_height="@dimen/input_field_height"
-                android:layout_marginTop="@dimen/field_margin_top"
-                android:background="@drawable/edit_text_border"
-                android:ems="10"
-                android:hint="@string/your_name_hint"
-                android:inputType="textPersonName"
-                android:paddingLeft="@dimen/hint_left_padding"
-                android:textColorHint="@color/hintColor"
-                android:textSize="@dimen/input_hint_text_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_txt_view" />
+<!--            <EditText-->
+<!--                android:id="@+id/name_input"-->
+<!--                android:layout_width="@dimen/input_field_width"-->
+<!--                android:layout_height="@dimen/input_field_height"-->
+<!--                android:layout_marginTop="@dimen/field_margin_top"-->
+<!--                android:background="@drawable/edit_text_border"-->
+<!--                android:ems="10"-->
+<!--                android:hint="@string/your_name_hint"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:paddingLeft="@dimen/hint_left_padding"-->
+<!--                android:textColorHint="@color/hintColor"-->
+<!--                android:textSize="@dimen/input_hint_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/name_txt_view" />-->
 
-            <TextView
-                android:id="@+id/disease_txt_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
-                android:layout_marginTop="@dimen/field_label_margin_top"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="@string/disease"
-                android:textColor="@color/DarkColor"
-                android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_input" />
+<!--            <TextView-->
+<!--                android:id="@+id/disease_txt_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/full_name_margin_start"-->
+<!--                android:layout_marginTop="@dimen/field_label_margin_top"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="@string/disease"-->
+<!--                android:textColor="@color/DarkColor"-->
+<!--                android:textSize="@dimen/label_field_txt_size"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/name_input" />-->
 
-            <EditText
-                android:id="@+id/disease_input"
-                android:layout_width="@dimen/input_field_width"
-                android:layout_height="@dimen/input_field_height"
-                android:layout_marginTop="@dimen/field_margin_top"
-                android:background="@drawable/edit_text_border"
-                android:ems="10"
-                android:hint="@string/what_is_your_illness"
-                android:inputType="textPersonName"
-                android:paddingLeft="@dimen/hint_left_padding"
-                android:textColorHint="@color/hintColor"
-                android:textSize="@dimen/input_hint_text_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/disease_txt_view" />
+<!--            <EditText-->
+<!--                android:id="@+id/disease_input"-->
+<!--                android:layout_width="@dimen/input_field_width"-->
+<!--                android:layout_height="@dimen/input_field_height"-->
+<!--                android:layout_marginTop="@dimen/field_margin_top"-->
+<!--                android:background="@drawable/edit_text_border"-->
+<!--                android:ems="10"-->
+<!--                android:hint="@string/what_is_your_illness"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:paddingLeft="@dimen/hint_left_padding"-->
+<!--                android:textColorHint="@color/hintColor"-->
+<!--                android:textSize="@dimen/input_hint_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/disease_txt_view" />-->
 
-            <TextView
-                android:id="@+id/loc_txt_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
-                android:layout_marginTop="@dimen/field_label_margin_top"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="@string/location"
-                android:textColor="@color/DarkColor"
-                android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/disease_input" />
+<!--            <TextView-->
+<!--                android:id="@+id/loc_txt_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/full_name_margin_start"-->
+<!--                android:layout_marginTop="@dimen/field_label_margin_top"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="@string/location"-->
+<!--                android:textColor="@color/DarkColor"-->
+<!--                android:textSize="@dimen/label_field_txt_size"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/disease_input" />-->
 
-            <EditText
-                android:id="@+id/loc_input"
-                android:layout_width="@dimen/input_field_width"
-                android:layout_height="@dimen/input_field_height"
-                android:layout_marginTop="@dimen/field_margin_top"
-                android:background="@drawable/edit_text_border"
-                android:ems="10"
-                android:hint="@string/where_is_your_location"
-                android:inputType="textPersonName"
-                android:paddingLeft="@dimen/hint_left_padding"
-                android:textColorHint="@color/hintColor"
-                android:textSize="@dimen/input_hint_text_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loc_txt_view" />
+<!--            <EditText-->
+<!--                android:id="@+id/loc_input"-->
+<!--                android:layout_width="@dimen/input_field_width"-->
+<!--                android:layout_height="@dimen/input_field_height"-->
+<!--                android:layout_marginTop="@dimen/field_margin_top"-->
+<!--                android:background="@drawable/edit_text_border"-->
+<!--                android:ems="10"-->
+<!--                android:hint="@string/where_is_your_location"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:paddingLeft="@dimen/hint_left_padding"-->
+<!--                android:textColorHint="@color/hintColor"-->
+<!--                android:textSize="@dimen/input_hint_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/loc_txt_view" />-->
 
-            <TextView
-                android:id="@+id/description_txt_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/full_name_margin_start"
-                android:layout_marginTop="@dimen/field_label_margin_top"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="@string/description_optional"
-                android:textColor="@color/DarkColor"
-                android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loc_input" />
+<!--            <TextView-->
+<!--                android:id="@+id/description_txt_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/full_name_margin_start"-->
+<!--                android:layout_marginTop="@dimen/field_label_margin_top"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="@string/description_optional"-->
+<!--                android:textColor="@color/DarkColor"-->
+<!--                android:textSize="@dimen/label_field_txt_size"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/loc_input" />-->
 
-            <EditText
-                android:id="@+id/description_input"
-                android:layout_width="@dimen/input_field_width"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/field_margin_top"
-                android:background="@drawable/edit_text_border"
-                android:ems="10"
-                android:gravity="top"
-                android:hint="@string/describe_here"
-                android:inputType="textPersonName"
-                android:paddingLeft="@dimen/hint_left_padding"
-                android:textColorHint="@color/hintColor"
-                android:textSize="@dimen/input_hint_text_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/description_txt_view" />
+<!--            <EditText-->
+<!--                android:id="@+id/description_input"-->
+<!--                android:layout_width="@dimen/input_field_width"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="@dimen/field_margin_top"-->
+<!--                android:background="@drawable/edit_text_border"-->
+<!--                android:ems="10"-->
+<!--                android:gravity="top"-->
+<!--                android:hint="@string/describe_here"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:paddingLeft="@dimen/hint_left_padding"-->
+<!--                android:textColorHint="@color/hintColor"-->
+<!--                android:textSize="@dimen/input_hint_text_size"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/description_txt_view" />-->
 
-            <Button
-                android:id="@+id/request_button"
-                android:layout_width="@dimen/next_button_width"
-                android:layout_height="@dimen/next_button_height"
-                android:layout_marginTop="@dimen/next_button_margin_top"
-                android:layout_marginBottom="90dp"
-                android:background="@drawable/shape_green"
-                android:fontFamily="@font/proxima_nova_semibold"
-                android:text="@string/request"
-                android:textAllCaps="false"
-                android:textColor="@color/WhiteColor"
-                android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/loc_input"
-                app:layout_constraintStart_toStartOf="@+id/loc_input"
-                app:layout_constraintTop_toBottomOf="@+id/description_input" />
+<!--            <Button-->
+<!--                android:id="@+id/request_button"-->
+<!--                android:layout_width="@dimen/next_button_width"-->
+<!--                android:layout_height="@dimen/next_button_height"-->
+<!--                android:layout_marginTop="@dimen/next_button_margin_top"-->
+<!--                android:layout_marginBottom="90dp"-->
+<!--                android:background="@drawable/shape_green"-->
+<!--                android:fontFamily="@font/proxima_nova_semibold"-->
+<!--                android:text="@string/request"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/WhiteColor"-->
+<!--                android:textSize="@dimen/label_field_txt_size"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/loc_input"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/loc_input"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/description_input" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

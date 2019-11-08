@@ -3,6 +3,7 @@ package com.example.telemedicine;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -16,6 +17,7 @@ public class SplashActivity extends AppCompatActivity {
 
     if (!mIsSplashLoaded){
       setContentView(R.layout.activity_splash);
+      setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
       new Handler().postDelayed(() -> {
         startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
         finish();

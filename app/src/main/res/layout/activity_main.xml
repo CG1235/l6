@@ -49,7 +49,7 @@
         android:layout_marginTop="@dimen/lores_txt_margin_top"
         android:fontFamily="@font/proxima_nova_regular"
         android:lineSpacingExtra="@dimen/lores_txt_line_spacing"
-        android:text="@string/lores_ipsum"
+        android:text="@string/bs_1"
         android:textAlignment="center"
         android:textColor="@color/WhiteColor"
         android:textSize="@dimen/welc_act_multiline_txt_size"

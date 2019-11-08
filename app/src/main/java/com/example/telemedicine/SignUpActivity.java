@@ -5,6 +5,7 @@ import androidx.appcompat.app.WindowDecorActionBar;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -28,6 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_sign_up);
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     mBackArrow = findViewById(R.id.back_arrow_image_view);
     mActivityName = getCallingActivity().getClassName();

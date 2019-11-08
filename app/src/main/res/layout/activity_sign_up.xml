@@ -183,7 +183,7 @@
             <EditText
                 android:id="@+id/loc_input"
                 android:layout_width="@dimen/input_field_width"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/input_field_height"
                 android:layout_marginTop="@dimen/field_margin_top"
                 android:background="@drawable/edit_text_border"
                 android:ems="10"

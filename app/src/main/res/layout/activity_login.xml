@@ -105,7 +105,7 @@
         android:text="@string/login_button_txt"
         android:textAllCaps="false"
         android:textColor="@color/greenTextColor"
-        android:textSize="@dimen/login_input_field_text_size"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_login_input" />
@@ -119,7 +119,7 @@
         android:fontFamily="@font/proxima_nova_semibold"
         android:text="@string/signup_btn_text"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/login_input_field_text_size"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/login_login_button" />

@@ -14,6 +14,7 @@
     <item
         android:icon="@android:color/transparent"
         android:title=""
+        android:id="@+id/nav_add"
         android:enabled="false"
         app:showAsAction="always"/>
     <item

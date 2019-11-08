@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Telemedicine</string>
-    <string name="lores_ipsum">Lorem ipsum dolor sit amet, conse ctetur adipiscingelit, t. Ut
+    <string name="bs_1">Lorem ipsum dolor sit amet, conse ctetur adipiscingelit, t. Ut
     enim ad veni am, quis nostrud exercitation ullamco</string>
+    <string name="bs_2">Aku ingin menjadi setitik awan kecil di langint bersama mentari yaga hah</string>
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -50,4 +51,12 @@
     <string name="description_optional">Description ( Optional)</string>
     <string name="describe_here">Describe Here</string>
     <string name="request">Request</string>
+    <string name="toolbar_new_request">Add</string>
+    <string name="notification">Notification</string>
+    <string name="approved_request">Your Request Has Been Approved</string>
+    <string name="user_req_name">Name</string>
+    <string name="location_label">Location</string>
+    <string name="doctor_label">Doctor</string>
+    <string name="confirm_req">Confirm</string>
+    <string name="cancel_request">Cancel Request</string>
 </resources>
