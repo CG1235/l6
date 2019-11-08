@@ -98,7 +98,7 @@
     <dimen name="multiline_text_w">300dp</dimen>
     <dimen name="multiline_text_h">80dp</dimen>
     <dimen name="multiline_text_line_spacing">4dp</dimen>
-    <dimen name="multiline_trxt_margin_top">400dp</dimen>
+    <dimen name="multiline_text_margin_top">400dp</dimen>
     <dimen name="req_details_margin_top">520dp</dimen>
     <dimen name="req_details_margin_end">175dp</dimen>
     <dimen name="label_margin_top">25dp</dimen>
@@ -108,11 +108,15 @@
     <dimen name="cv_w">330dp</dimen>
     <dimen name="cv_h">120dp</dimen>
     <dimen name="cv_margin_top">30dp</dimen>
-    <dimen name="doctor_photo_h">60dp</dimen>
-    <dimen name="doctor_photo_w">60dp</dimen>
-    <dimen name="doctor_photo_margin_start">40dp</dimen>
+    <dimen name="doctor_photo_h">95dp</dimen>
+    <dimen name="doctor_photo_w">95dp</dimen>
+    <dimen name="doctor_photo_margin_start">30dp</dimen>
     <dimen name="confirm_btn_margin_top">60dp</dimen>
     <dimen name="cancel_btn_margin_top">40dp</dimen>
     <dimen name="cancel_btn_margin_bottom">100dp</dimen>
+    <dimen name="doctor_name_margin_start">20dp</dimen>
+    <dimen name="doctor_name_margin_top">20dp</dimen>
+    <dimen name="specialty_and_rating_margin_top">10dp</dimen>
+    <dimen name="dots_margin_end">10dp</dimen>
 
 </resources>

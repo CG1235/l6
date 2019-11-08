@@ -59,4 +59,5 @@
     <string name="doctor_label">Doctor</string>
     <string name="confirm_req">Confirm</string>
     <string name="cancel_request">Cancel Request</string>
+    <string name="description">Description</string>
 </resources>

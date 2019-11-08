@@ -6,8 +6,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.RatingBar;
 import android.widget.Toolbar;
 
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -15,7 +19,6 @@ public class HomeActivity extends AppCompatActivity {
 
   private BottomNavigationView mNavigationView;
   private FloatingActionButton mAddReqFab;
-  private Toolbar mToolbar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,35 +27,30 @@ public class HomeActivity extends AppCompatActivity {
     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     mNavigationView = findViewById(R.id.nav_bar);
+
     openHomeFragment();
     mAddReqFab = findViewById(R.id.add_req_fab);
-//    mToolbar = findViewById(R.id.toolbar);
+    mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1);
     mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
       Fragment fragment = null;
       switch (menuItem.getItemId()){
         case R.id.nav_home:
-//          mToolbar.setTitle("Home");
           fragment = new HomeFragment();
           break;
         case R.id.nav_notification:
-//          mToolbar.setTitle("Notification");
           fragment = new NotificationFragment();
+          mNavigationView.removeBadge(R.id.nav_notification);
           break;
-//        case R.id.nav_add:
-//          fragment = new AddFragment();
-//          break;
       }
       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
       return true;
     });
     mAddReqFab.setOnClickListener(view ->
-    {
-//      mToolbar.setTitle("New request");
       getSupportFragmentManager()
               .beginTransaction()
               .replace(R.id.fragment_container, new AddFragment())
-              .commit();
-    });
+              .commit()
+    );
   }
 
   private void openHomeFragment() {

@@ -24,317 +24,307 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/shadow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-
-
-        <ImageView
-            android:id="@+id/confirm_tick"
-            android:layout_width="@dimen/tick_size"
-            android:layout_height="@dimen/tick_size"
-            app:layout_constraintBottom_toBottomOf="@+id/green_circle"
-            app:layout_constraintEnd_toEndOf="@+id/green_circle"
-            app:layout_constraintStart_toStartOf="@+id/green_circle"
-            app:layout_constraintTop_toTopOf="@+id/green_circle"
-            app:srcCompat="@drawable/ic_confirm_tick" />
-
-        <ImageView
-            android:id="@+id/green_circle"
-            android:layout_width="@dimen/circle_radius"
-            android:layout_height="@dimen/circle_radius"
-            android:layout_marginTop="@dimen/green_circle_margin_top"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_green_circle" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="@dimen/approved_req_w"
-            android:layout_height="@dimen/approved_req_h"
-            android:layout_marginTop="@dimen/approved_req_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/approved_request"
-            android:textColor="@color/DarkColor"
-            android:textAlignment="center"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="@dimen/multiline_text_w"
-            android:layout_height="@dimen/multiline_text_h"
-            android:layout_marginTop="@dimen/multiline_trxt_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:lineSpacingExtra="@dimen/multiline_text_line_spacing"
-            android:text="@string/bs_1"
-            android:textColor="@color/hintColor"
-            android:textAlignment="center"
-            android:textSize="@dimen/smaller_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/confirm_tick"
+                android:layout_width="@dimen/tick_size"
+                android:layout_height="@dimen/tick_size"
+                app:layout_constraintBottom_toBottomOf="@+id/green_circle"
+                app:layout_constraintEnd_toEndOf="@+id/green_circle"
+                app:layout_constraintStart_toStartOf="@+id/green_circle"
+                app:layout_constraintTop_toTopOf="@+id/green_circle"
+                app:srcCompat="@drawable/ic_confirm_tick" />
 
-        <TextView
-            android:id="@+id/request_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/req_details_margin_top"
-            android:layout_marginEnd="@dimen/req_details_margin_end"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="Request Details"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/green_circle"
+                android:layout_width="@dimen/circle_radius"
+                android:layout_height="@dimen/circle_radius"
+                android:layout_marginTop="@dimen/green_circle_margin_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_green_circle" />
 
-        <TextView
-            android:id="@+id/user_req_name_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/label_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/user_req_name"
-            android:textAlignment="textStart"
-            android:textColor="@color/DarkColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/request_details"
-            app:layout_constraintTop_toBottomOf="@+id/request_details" />
+            <TextView
+                android:layout_width="@dimen/approved_req_w"
+                android:layout_height="@dimen/approved_req_h"
+                android:layout_marginTop="@dimen/approved_req_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/approved_request"
+                android:textAlignment="center"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/user_req_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/data_text_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="test"
-            android:textAlignment="textStart"
-            android:textColor="@color/hintColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
-            app:layout_constraintTop_toBottomOf="@+id/user_req_name_label" />
+            <TextView
+                android:layout_width="@dimen/multiline_text_w"
+                android:layout_height="@dimen/multiline_text_h"
+                android:layout_marginTop="@dimen/multiline_text_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:lineSpacingExtra="@dimen/multiline_text_line_spacing"
+                android:text="@string/bs_1"
+                android:textAlignment="center"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/smaller_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/user_disease_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/label_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/disease"
-            android:textAlignment="textStart"
-            android:textColor="@color/DarkColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/request_details"
-            app:layout_constraintTop_toBottomOf="@+id/user_req_name" />
+            <TextView
+                android:id="@+id/request_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/req_details_margin_top"
+                android:layout_marginEnd="@dimen/req_details_margin_end"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="Request Details"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/user_disease"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/data_text_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="test"
-            android:textAlignment="textStart"
-            android:textColor="@color/hintColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
-            app:layout_constraintTop_toBottomOf="@+id/user_disease_label" />
+            <TextView
+                android:id="@+id/user_req_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/user_req_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/request_details"
+                app:layout_constraintTop_toBottomOf="@+id/request_details" />
 
-        <TextView
-            android:id="@+id/user_location_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/label_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/location_label"
-            android:textAlignment="textStart"
-            android:textColor="@color/DarkColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/request_details"
-            app:layout_constraintTop_toBottomOf="@+id/user_disease" />
+            <TextView
+                android:id="@+id/user_req_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/data_text_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="test"
+                android:textAlignment="textStart"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/user_req_name_label" />
 
-        <TextView
-            android:id="@+id/user_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/data_text_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="test"
-            android:textAlignment="textStart"
-            android:textColor="@color/hintColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
-            app:layout_constraintTop_toBottomOf="@+id/user_location_label" />
+            <TextView
+                android:id="@+id/user_disease_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/disease"
+                android:textAlignment="textStart"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/request_details"
+                app:layout_constraintTop_toBottomOf="@+id/user_req_name" />
 
-        <TextView
-            android:id="@+id/user_description_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/label_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/location_label"
-            android:textAlignment="textStart"
-            android:textColor="@color/DarkColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/request_details"
-            app:layout_constraintTop_toBottomOf="@+id/user_location" />
+            <TextView
+                android:id="@+id/user_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/data_text_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="test"
+                android:textAlignment="textStart"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/user_disease_label" />
 
-        <TextView
-            android:id="@+id/user_description"
-            android:layout_width="@dimen/user_description_w"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/data_text_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/bs_2"
-            android:textAlignment="textStart"
-            android:textColor="@color/hintColor"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
-            app:layout_constraintTop_toBottomOf="@+id/user_description_label" />
+            <TextView
+                android:id="@+id/user_location_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/location_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/request_details"
+                app:layout_constraintTop_toBottomOf="@+id/user_disease" />
 
-        <TextView
-            android:id="@+id/doctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/doctor_label_margin_top"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/doctor_label"
-            android:textAlignment="textStart"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/bigger_text_size"
-            app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
-            app:layout_constraintTop_toBottomOf="@+id/user_description" />
+            <TextView
+                android:id="@+id/user_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/data_text_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="test"
+                android:textAlignment="textStart"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/user_location_label" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
-            android:layout_width="@dimen/cv_w"
-            android:layout_height="@dimen/cv_h"
-            android:layout_marginTop="@dimen/cv_margin_top"
-            app:cardBackgroundColor="@color/WhiteColor"
-            app:cardCornerRadius="1dp"
-            app:cardElevation="1dp"
-            app:cardPreventCornerOverlap="false"
-            app:cardMaxElevation="0dp"
-            app:layout_constraintStart_toStartOf="@id/doctor"
-            app:layout_constraintTop_toBottomOf="@id/doctor">
+            <TextView
+                android:id="@+id/user_description_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/description"
+                android:textAlignment="textStart"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/request_details"
+                app:layout_constraintTop_toBottomOf="@+id/user_location" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/user_description"
+                android:layout_width="@dimen/user_description_w"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/data_text_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/bs_2"
+                android:textAlignment="textStart"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/user_description_label" />
 
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/circularImageView"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="@dimen/doctor_photo_margin_start"
-                    android:src="@drawable/ic_home_icon"
-                    app:civ_border_color_start="#000000"
-                    app:civ_border_width="1dp"
-                    app:civ_shadow="true"
-                    app:civ_shadow_radius="10"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/doctor_label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/doctor_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/bigger_text_size"
+                app:layout_constraintStart_toStartOf="@+id/user_req_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/user_description" />
 
-                <TextView
-                    android:id="@+id/doctor_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/DarkColor"
-                    android:fontFamily="@font/proxima_nova_semibold"
-                    android:textSize="@dimen/smaller_text_size"
-                    android:text="Dudung Sokmati"
-                    app:layout_constraintStart_toEndOf="@+id/circularImageView"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="@dimen/cv_w"
+                android:layout_height="@dimen/cv_h"
+                android:layout_marginTop="@dimen/cv_margin_top"
+                app:cardBackgroundColor="@color/WhiteColor"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="1dp"
+                app:cardMaxElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintStart_toStartOf="@id/doctor"
+                app:layout_constraintTop_toBottomOf="@id/doctor">
 
-                <TextView
-                    android:id="@+id/doctor_specialty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/proxima_nova_regular"
-                    android:text="Eye Specialist"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/smaller_text_size"
-                    android:textStyle="italic"
-                    app:layout_constraintStart_toStartOf="@id/doctor_name"
-                    app:layout_constraintTop_toBottomOf="@id/doctor_name"
-                    />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <RatingBar
-                    android:id="@+id/rating_bar"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="@id/doctor_specialty"
-                    app:layout_constraintTop_toBottomOf="@id/doctor_specialty"
-                    android:scaleX="1.2"
-                    android:scaleY="1.2" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor_photo"
+                        android:layout_width="@dimen/doctor_photo_w"
+                        android:layout_height="@dimen/doctor_photo_h"
+                        android:layout_marginStart="@dimen/doctor_photo_margin_start"
+                        android:src="@drawable/ic_home_icon"
+                        app:civ_border_color="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/hintColor"
-                    android:textSize="@dimen/smaller_text_size"
-                    android:text="4.5"
-                    app:layout_constraintStart_toEndOf="@id/rating_bar"
-                    app:layout_constraintTop_toTopOf="@id/rating_bar"/>
+                    <TextView
+                        android:id="@+id/doctor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/doctor_name_margin_start"
+                        android:layout_marginTop="@dimen/doctor_name_margin_top"
+                        android:fontFamily="@font/proxima_nova_semibold"
+                        android:text="Dudung Sokmati"
+                        android:textColor="@color/DarkColor"
+                        android:textSize="@dimen/smaller_text_size"
+                        app:layout_constraintStart_toEndOf="@+id/doctor_photo"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <!--                <ImageView-->
-<!--                    android:id="@+id/doctor_photo"-->
-<!--                    android:layout_width="@dimen/doctor_photo_w"-->
-<!--                    android:layout_height="@dimen/doctor_photo_h"-->
-<!--                    android:layout_marginStart="@dimen/doctor_photo_margin_start"-->
-<!--                    android:background="@drawable/circle_shape"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/doctor_specialty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/specialty_and_rating_margin_top"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:text="Eye Specialist"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/smaller_text_size"
+                        android:textStyle="italic"
+                        app:layout_constraintStart_toStartOf="@id/doctor_name"
+                        app:layout_constraintTop_toBottomOf="@id/doctor_name" />
 
-        <Button
-            android:id="@+id/confirm_button"
-            android:layout_width="@dimen/next_button_width"
-            android:layout_height="@dimen/next_button_height"
-            android:layout_marginTop="@dimen/confirm_btn_margin_top"
-            android:background="@drawable/shape_green"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/confirm_req"
-            android:textAllCaps="false"
-            android:textColor="@color/WhiteColor"
-            android:textSize="@dimen/label_field_txt_size"
-            app:layout_constraintEnd_toEndOf="@+id/loc_input"
-            app:layout_constraintStart_toStartOf="@+id/card_view"
-            app:layout_constraintTop_toBottomOf="@+id/card_view" />
+                    <RatingBar
+                        android:id="@+id/rating_bar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/specialty_and_rating_margin_top"
+                        android:numStars="5"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:stepSize="0.1"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintStart_toStartOf="@id/doctor_specialty"
+                        app:layout_constraintTop_toBottomOf="@id/doctor_specialty" />
 
-        <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="@dimen/next_button_width"
-            android:layout_height="@dimen/next_button_height"
-            android:layout_marginTop="@dimen/cancel_btn_margin_top"
-            android:layout_marginBottom="@dimen/cancel_btn_margin_bottom"
-            android:background="@drawable/shape_transparent_gray_border"
-            android:fontFamily="@font/proxima_nova_semibold"
-            android:text="@string/cancel_request"
-            android:textAllCaps="false"
-            android:textColor="@color/hintColor"
-            android:textSize="@dimen/label_field_txt_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/loc_input"
-            app:layout_constraintStart_toStartOf="@+id/confirm_button"
-            app:layout_constraintTop_toBottomOf="@+id/confirm_button" />
+                    <TextView
+                        android:id="@+id/rating_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:textColor="@color/hintColor"
+                        android:textSize="@dimen/smaller_text_size"
+                        app:layout_constraintStart_toEndOf="@id/rating_bar"
+                        app:layout_constraintTop_toTopOf="@id/rating_bar" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="@dimen/next_button_width"
+                android:layout_height="@dimen/next_button_height"
+                android:layout_marginTop="@dimen/confirm_btn_margin_top"
+                android:background="@drawable/shape_green"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/confirm_req"
+                android:textAllCaps="false"
+                android:textColor="@color/WhiteColor"
+                android:textSize="@dimen/label_field_txt_size"
+                app:layout_constraintEnd_toEndOf="@+id/loc_input"
+                app:layout_constraintStart_toStartOf="@+id/card_view"
+                app:layout_constraintTop_toBottomOf="@+id/card_view" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="@dimen/next_button_width"
+                android:layout_height="@dimen/next_button_height"
+                android:layout_marginTop="@dimen/cancel_btn_margin_top"
+                android:layout_marginBottom="@dimen/cancel_btn_margin_bottom"
+                android:background="@drawable/shape_transparent_gray_border"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/cancel_request"
+                android:textAllCaps="false"
+                android:textColor="@color/hintColor"
+                android:textSize="@dimen/label_field_txt_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/loc_input"
+                app:layout_constraintStart_toStartOf="@+id/confirm_button"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.appcompat.widget.Toolbar
@@ -342,8 +332,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbarHeight"
         android:background="@color/toolbarBgColor"
-        app:layout_constraintEnd_toEndOf="parent"
         android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -369,9 +359,17 @@
         android:id="@+id/three_dots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dots_margin_end"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="35dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

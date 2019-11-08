@@ -10,4 +10,6 @@
     <color name="hintColor">#7D7B7B</color>
     <color name="colorAuxiliary">#EB5959</color>
     <color name="navBarIconColor">#607d8a</color>
+    <color name="SlightlyBlue">#89A8B7</color>
+    <color name="StarsColor">#ffd500</color>
 </resources>
