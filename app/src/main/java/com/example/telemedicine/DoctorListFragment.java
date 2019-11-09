@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class DoctorListFragment extends Fragment {
 
   private LinearLayoutManager mLayoutManager;
   private RecyclerView mRecyclerView;

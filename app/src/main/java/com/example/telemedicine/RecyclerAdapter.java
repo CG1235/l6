@@ -30,6 +30,7 @@ import lombok.Setter;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
 
+
   private FragmentActivity mContext;
   private LayoutInflater mInflater;
   private List<DoctorInfo> mDoctorList;
@@ -104,11 +105,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         DoctorInfoFragment fragment = new DoctorInfoFragment();
 
         Bundle args = new Bundle();
-        args.putString("Name", mDoctorList.get(mIndex).getMName());
-        args.putString("Specialty", mDoctorList.get(mIndex).getMSpecialty());
-        args.putString("Address", mDoctorList.get(mIndex).getMAddress());
-        args.putInt("PhotoUrl", mDoctorList.get(mIndex).getMPhotoUrl());
-        args.putFloat("Rating", mDoctorList.get(mIndex).getMRating());
+        args.putString(DoctorInfoFragment.DOCTOR_NAME, mDoctorList.get(mIndex).getMName());
+        args.putString(DoctorInfoFragment.DOCTOR_SPECIALTY, mDoctorList.get(mIndex).getMSpecialty());
+        args.putString(DoctorInfoFragment.DOCTOR_ADDRESS, mDoctorList.get(mIndex).getMAddress());
+        args.putInt(DoctorInfoFragment.DOCTOR_PHOTO_URL, mDoctorList.get(mIndex).getMPhotoUrl());
+        args.putFloat(DoctorInfoFragment.DOCTOR_RATING, mDoctorList.get(mIndex).getMRating());
         fragment.setArguments(args);
 
         mContext.getSupportFragmentManager().beginTransaction()

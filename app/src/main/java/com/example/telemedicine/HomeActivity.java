@@ -2,16 +2,10 @@ package com.example.telemedicine;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.RatingBar;
-import android.widget.Toolbar;
 
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -35,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
       Fragment fragment = null;
       switch (menuItem.getItemId()){
         case R.id.nav_home:
-          fragment = new HomeFragment();
+          fragment = new DoctorListFragment();
           break;
         case R.id.nav_notification:
           fragment = new NotificationFragment();
@@ -54,6 +48,6 @@ public class HomeActivity extends AppCompatActivity {
   }
 
   private void openHomeFragment() {
-    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DoctorListFragment()).commit();
   }
 }

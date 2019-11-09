@@ -54,7 +54,7 @@
                         android:id="@+id/doctor_info_photo"
                         android:layout_width="@dimen/doctor_photo_w"
                         android:layout_height="@dimen/doctor_photo_h"
-                        android:layout_marginStart="0dp"
+                        android:layout_marginStart="5dp"
                         android:src="@drawable/ic_home_icon"
                         app:civ_border_color="@android:color/transparent"
                         app:layout_constraintBottom_toBottomOf="parent"
