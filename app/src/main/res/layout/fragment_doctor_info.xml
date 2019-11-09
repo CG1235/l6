@@ -36,7 +36,7 @@
                 android:id="@+id/card_view"
                 android:layout_width="@dimen/cv_w"
                 android:layout_height="@dimen/cv_h"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="@dimen/d_info_cv_margin_top"
                 app:cardBackgroundColor="@color/WhiteColor"
                 app:cardCornerRadius="1dp"
                 app:cardElevation="1dp"
@@ -49,12 +49,11 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/doctor_info_photo"
                         android:layout_width="@dimen/doctor_photo_w"
                         android:layout_height="@dimen/doctor_photo_h"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/d_inco_photo_margin_start"
                         android:src="@drawable/ic_home_icon"
                         app:civ_border_color="@android:color/transparent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,24 +118,24 @@
                 android:id="@+id/short_descr_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="@dimen/d_info_description_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/short_description"
                 android:textColor="@color/DarkColor"
-                android:textSize="18sp"
+                android:textSize="@dimen/d_info_big_text_size"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/short_descr_tv"
                 android:layout_width="@dimen/cv_w"
-                android:layout_height="80dp"
-                android:layout_marginTop="280dp"
+                android:layout_height="@dimen/d_info_decription_h"
+                android:layout_marginTop="@dimen/d_info_description_txt_margin_top"
                 android:fontFamily="@font/proxima_nova_regular"
-                android:lineSpacingExtra="4dp"
+                android:lineSpacingExtra="@dimen/d_info_line_spacing"
                 android:text="@string/bs_1"
                 android:textColor="@color/hintColor"
-                android:textSize="16dp"
+                android:textSize="@dimen/d_info_small_trxt_size"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -144,19 +143,19 @@
                 android:id="@+id/loc_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="400dp"
+                android:layout_marginTop="@dimen/d_info_location_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/location"
                 android:textColor="@color/DarkColor"
-                android:textSize="18sp"
+                android:textSize="@dimen/d_info_big_text_size"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/loc_img_view"
-                android:layout_width="20dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="440dp"
+                android:layout_width="@dimen/d_info_loc_icon_w"
+                android:layout_height="@dimen/d_info_loc_icon_h"
+                android:layout_marginTop="@dimen/d_info_loc_icon_margin_top"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_location_icon" />
@@ -165,11 +164,11 @@
                 android:id="@+id/doctor_info_location_street"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/d_info_address_margin_start"
                 android:fontFamily="@font/proxima_nova_regular"
                 android:text="St. Bronxlyn 12"
                 android:textColor="@color/hintColor"
-                android:textSize="18sp"
+                android:textSize="@dimen/d_info_big_text_size"
                 app:layout_constraintStart_toEndOf="@id/loc_img_view"
                 app:layout_constraintTop_toTopOf="@id/loc_img_view" />
 
@@ -178,8 +177,8 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/linear_layout"
                 android:layout_width="@dimen/cv_w"
-                android:layout_height="200dp"
-                android:layout_marginTop="480dp"
+                android:layout_height="@dimen/map_h"
+                android:layout_marginTop="@dimen/map_margin_top"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -193,24 +192,19 @@
                 android:id="@+id/doctor_info_request_button"
                 android:layout_width="@dimen/next_button_width"
                 android:layout_height="@dimen/next_button_height"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginTop="@dimen/d_info_button_margin_top"
+                android:layout_marginBottom="@dimen/d_info_button_margin_bottom"
                 android:background="@drawable/shape_green"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/request"
                 android:textAllCaps="false"
                 android:textColor="@color/WhiteColor"
-                android:textSize="@dimen/label_field_txt_size"
+                android:textSize="@dimen/login_btn_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toBottomOf="@id/linear_layout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
-
-
-
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -239,7 +233,6 @@
             app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
     </androidx.appcompat.widget.Toolbar>
 
-
     <ImageView
         android:id="@+id/three_dots"
         android:layout_width="wrap_content"
@@ -249,7 +242,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginEnd="@dimen/dots_margin_end"
         app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
