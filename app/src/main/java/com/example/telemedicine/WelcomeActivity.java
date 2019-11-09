@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.common.GoogleApiAvailability;
+
 public class WelcomeActivity extends AppCompatActivity {
 
   public static final int REQUEST_CODE = 1488;
@@ -29,5 +31,6 @@ public class WelcomeActivity extends AppCompatActivity {
       startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 //        finishAffinity();
     });
+
   }
 }

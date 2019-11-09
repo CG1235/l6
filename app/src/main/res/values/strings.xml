@@ -61,4 +61,8 @@
     <string name="cancel_request">Cancel Request</string>
     <string name="description">Description</string>
     <string name="doctor_list">Doctor List</string>
+    <string name="doctor_contact">Doctor Contact</string>
+    <string name="short_description">Short Description</string>
+
+    <string name="google_maps_API_key">AIzaSyAxzzyIwYzc0hsXcya8Hd9hL3uRfRfVplM</string>
 </resources>

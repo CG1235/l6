@@ -2,6 +2,7 @@ package com.example.telemedicine;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Callback;
@@ -26,11 +30,11 @@ import lombok.Setter;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
 
-  private Context mContext;
+  private FragmentActivity mContext;
   private LayoutInflater mInflater;
   private List<DoctorInfo> mDoctorList;
 
-  public RecyclerAdapter(Context context, List<DoctorInfo> doctorList){
+  public RecyclerAdapter(FragmentActivity context, List<DoctorInfo> doctorList){
 
     mContext = context;
     mDoctorList = new ArrayList<>();
@@ -56,6 +60,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
       holder.mParams.height = dimenNameHeight;
       holder.mDoctorName.setLayoutParams(holder.mParams);
     }
+    holder.mIndex = position;
     holder.mDoctorName.setText(info.getMName());
     holder.mDoctorSpecialty.setText(info.getMSpecialty());
     holder.mDoctorAddress.setText(info.getMAddress());
@@ -81,7 +86,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private TextView mRatingNumber;
     private RatingBar mRatingBar;
     private int mNameFieldHeight;
-    private final ViewGroup.LayoutParams mParams;
+    private ViewGroup.LayoutParams mParams;
+    private int mIndex;
 
     public ViewHolder(@NonNull View itemView) {
       super(itemView);
@@ -93,6 +99,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
       mRatingBar = itemView.findViewById(R.id.star_doctor_list);
       mParams = mDoctorName.getLayoutParams();
       mNameFieldHeight = mDoctorName.getHeight();
+
+      itemView.setOnClickListener(view -> {
+        DoctorInfoFragment fragment = new DoctorInfoFragment();
+
+        Bundle args = new Bundle();
+        args.putString("Name", mDoctorList.get(mIndex).getMName());
+        args.putString("Specialty", mDoctorList.get(mIndex).getMSpecialty());
+        args.putString("Address", mDoctorList.get(mIndex).getMAddress());
+        args.putInt("PhotoUrl", mDoctorList.get(mIndex).getMPhotoUrl());
+        args.putFloat("Rating", mDoctorList.get(mIndex).getMRating());
+        fragment.setArguments(args);
+
+        mContext.getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
+
+//        FragmentManager manager = mContext.getSupportFragmentManager();
+//        FragmentTransaction transaction = manager.beginTransaction();
+//        transaction.replace(R.id.fragment_container, fragment);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+      });
     }
   }
 }

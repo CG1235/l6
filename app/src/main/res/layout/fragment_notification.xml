@@ -230,7 +230,7 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/doctor_photo"
+                        android:id="@+id/doctor_info_photo"
                         android:layout_width="@dimen/doctor_photo_w"
                         android:layout_height="@dimen/doctor_photo_h"
                         android:layout_marginStart="@dimen/doctor_photo_margin_start"
@@ -241,7 +241,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/doctor_name"
+                        android:id="@+id/doctor_info_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/doctor_name_margin_start"
@@ -250,11 +250,11 @@
                         android:text="Dudung Sokmati"
                         android:textColor="@color/DarkColor"
                         android:textSize="@dimen/smaller_text_size"
-                        app:layout_constraintStart_toEndOf="@+id/doctor_photo"
+                        app:layout_constraintStart_toEndOf="@+id/doctor_info_photo"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/doctor_specialty"
+                        android:id="@+id/doctor_info_specialty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/specialty_and_rating_margin_top"
@@ -263,11 +263,11 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/smaller_text_size"
                         android:textStyle="italic"
-                        app:layout_constraintStart_toStartOf="@id/doctor_name"
-                        app:layout_constraintTop_toBottomOf="@id/doctor_name" />
+                        app:layout_constraintStart_toStartOf="@id/doctor_info_name"
+                        app:layout_constraintTop_toBottomOf="@id/doctor_info_name" />
 
                     <RatingBar
-                        android:id="@+id/rating_bar"
+                        android:id="@+id/doctor_info_rating_bar"
                         style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -277,18 +277,18 @@
                         android:scaleY="1.2"
                         android:stepSize="0.1"
                         android:theme="@style/RatingBar"
-                        app:layout_constraintStart_toStartOf="@id/doctor_specialty"
-                        app:layout_constraintTop_toBottomOf="@id/doctor_specialty" />
+                        app:layout_constraintStart_toStartOf="@id/doctor_info_specialty"
+                        app:layout_constraintTop_toBottomOf="@id/doctor_info_specialty" />
 
                     <TextView
-                        android:id="@+id/rating_indicator"
+                        android:id="@+id/doctor_info_rating_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:textColor="@color/hintColor"
                         android:textSize="@dimen/smaller_text_size"
-                        app:layout_constraintStart_toEndOf="@id/rating_bar"
-                        app:layout_constraintTop_toTopOf="@id/rating_bar" />
+                        app:layout_constraintStart_toEndOf="@id/doctor_info_rating_bar"
+                        app:layout_constraintTop_toTopOf="@id/doctor_info_rating_bar" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 

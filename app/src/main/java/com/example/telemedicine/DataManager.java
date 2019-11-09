@@ -18,6 +18,9 @@ public class DataManager {
   }
 
   public void createDoctorInfos(){
+    if (mDoctorInfo == null)
+      mDoctorInfo = new ArrayList<>();
+
     String name = "Oleg Olegovich";
     String specialty = "Neurolog";
     String address = "Backer St. 456";
@@ -65,6 +68,10 @@ public class DataManager {
     address = "St. Ismail 100";
     rating = 3.5;
     mDoctorInfo.add(new DoctorInfo(name, specialty, address, R.drawable.ic_avatar_cat_120, (float) rating));
+  }
+
+  public void clearList(){
+    mDoctorInfo.clear();
   }
 
 //  public List<DoctorInfo> getDoctorInfo(){return mDoctorInfo;}

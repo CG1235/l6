@@ -35,14 +35,20 @@ public class HomeFragment extends Fragment {
     mRecyclerView.setLayoutManager(mLayoutManager);
     DataManager.getInstance().createDoctorInfos();
     mDoctorInfoList = DataManager.getInstance().getMDoctorInfo();
-    mAdapter = new RecyclerAdapter(view.getContext(), mDoctorInfoList);
+    mAdapter = new RecyclerAdapter(getActivity(), mDoctorInfoList);
     mRecyclerView.setAdapter(mAdapter);
   }
 
   @Override
   public void onResume() {
     super.onResume();
-    mAdapter.notifyDataSetChanged();
+    if (mDoctorInfoList.size() != 0){
+      DataManager.getInstance().clearList();
+      mDoctorInfoList.clear();
+      DataManager.getInstance().createDoctorInfos();
+      mDoctorInfoList = DataManager.getInstance().getMDoctorInfo();
+      mAdapter.notifyDataSetChanged();
+    }
     mRecyclerView.setAdapter(mAdapter);
   }
 }

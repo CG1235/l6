@@ -1,8 +1,5 @@
 package com.example.telemedicine;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,9 +30,9 @@ public class NotificationFragment extends Fragment {
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    mRatingBar = view.findViewById(R.id.rating_bar);
-    mIndicator = view.findViewById(R.id.rating_indicator);
-    mDoctorPhoto = view.findViewById(R.id.doctor_photo);
+    mRatingBar = view.findViewById(R.id.doctor_info_rating_bar);
+    mIndicator = view.findViewById(R.id.doctor_info_rating_number);
+    mDoctorPhoto = view.findViewById(R.id.doctor_info_photo);
     mRatingBar.setRating((float) 3.5);
     mIndicator.setText(String.valueOf(mRatingBar.getRating()));
     Picasso.get()
