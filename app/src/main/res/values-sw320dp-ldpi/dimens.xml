@@ -129,4 +129,8 @@
     <dimen name="list_address_margin_start">10dp</dimen>
     <dimen name="list_star_margin_start">20dp</dimen>
     <dimen name="list_rate_number_margin_start">15dp</dimen>
+    <dimen name="list_name_w">190dp</dimen>
+    <dimen name="list_name_h">25dp</dimen>
+    <dimen name="list_specialty_w">140dp</dimen>
+    <dimen name="list_cv_margin_top">10dp</dimen>
 </resources>

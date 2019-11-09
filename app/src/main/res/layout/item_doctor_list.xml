@@ -8,6 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_cv_margin_top"
         app:cardBackgroundColor="@color/WhiteColor"
         app:cardCornerRadius="4dp"
         app:cardElevation="2dp"
@@ -30,9 +31,10 @@
 
             <TextView
                 android:id="@+id/doctor_name_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/list_name_w"
+                android:layout_height="@dimen/list_name_h"
                 android:layout_marginStart="@dimen/list_text_name_margin_start"
+                android:lineSpacingExtra="0dp"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="Dudung Sokmati"
                 android:textAlignment="textStart"
@@ -43,7 +45,7 @@
 
             <TextView
                 android:id="@+id/doctor_specialty_list"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/list_specialty_w"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/list_content_margin_top"
                 android:fontFamily="@font/proxima_nova_regular"
@@ -65,6 +67,7 @@
                 app:srcCompat="@drawable/ic_location_icon" />
 
             <TextView
+                android:id="@+id/doctor_address_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/list_address_margin_start"
@@ -91,6 +94,7 @@
                 android:theme="@style/RatingBar" />
 
             <TextView
+                android:id="@+id/doctor_rating_number_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/list_rate_number_margin_start"

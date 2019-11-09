@@ -12,13 +12,11 @@ public class DoctorInfo {
   private String mName;
   private String mSpecialty;
   private String mAddress;
-  private String mPhotoUrl;
+  private int mPhotoUrl;
   private float mRating;
 
-  public DoctorInfo(){};
-
   public DoctorInfo(String name, String specialty,
-                    String address, String photoUrl, float rating){
+                    String address, int photoUrl, float rating){
 
     mName = name;
     mSpecialty = specialty;

@@ -20,6 +20,8 @@
         android:id="@+id/doctor_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/toolbarHeight"
+        android:layout_marginBottom="@dimen/nav_bar_h_plus_shadow_h"
         android:layout_marginStart="@dimen/recycler_view_vertical_margin"
         android:layout_marginEnd="@dimen/recycler_view_vertical_margin"
         android:clipToPadding="true"
@@ -58,6 +60,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/dots_margin_end"
         app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

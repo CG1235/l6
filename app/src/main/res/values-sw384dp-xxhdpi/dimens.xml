@@ -117,17 +117,21 @@
     <dimen name="specialty_and_rating_margin_top">10dp</dimen>
     <dimen name="dots_margin_end">10dp</dimen>
     <!--Notification fragment / Doctor list-->
-    <dimen name="recycler_view_vertical_margin">10dp</dimen>
-    <dimen name="list_cv_content_padding">20dp</dimen>
-    <dimen name="list_doctor_photo_w">70dp</dimen>
-    <dimen name="list_doctor_photo_h">70dp</dimen>
-    <dimen name="list_doctor_photo_margin_start">10dp</dimen>
-    <dimen name="list_text_name_margin_start">20dp</dimen>
-    <dimen name="list_text_size">18sp</dimen>
-    <dimen name="list_content_margin_top">5dp</dimen>
-    <dimen name="list_location_icon_w">20dp</dimen>
-    <dimen name="list_location_icon_h">35dp</dimen>
+    <dimen name="recycler_view_vertical_margin">5dp</dimen>
+    <dimen name="list_cv_content_padding">14dp</dimen>
+    <dimen name="list_doctor_photo_w">75dp</dimen>
+    <dimen name="list_doctor_photo_h">75dp</dimen>
+    <dimen name="list_doctor_photo_margin_start">0dp</dimen>
+    <dimen name="list_text_name_margin_start">15dp</dimen>
+    <dimen name="list_text_size">16sp</dimen>
+    <dimen name="list_content_margin_top">10dp</dimen>
+    <dimen name="list_location_icon_w">15dp</dimen>
+    <dimen name="list_location_icon_h">25dp</dimen>
     <dimen name="list_address_margin_start">10dp</dimen>
-    <dimen name="list_star_margin_start">20dp</dimen>
-    <dimen name="list_rate_number_margin_start">15dp</dimen>
+    <dimen name="list_star_margin_start">10dp</dimen>
+    <dimen name="list_rate_number_margin_start">10dp</dimen>
+    <dimen name="list_name_w">190dp</dimen>
+    <dimen name="list_name_h">20dp</dimen>
+    <dimen name="list_specialty_w">140dp</dimen>
+    <dimen name="list_cv_margin_top">10dp</dimen>
 </resources>
