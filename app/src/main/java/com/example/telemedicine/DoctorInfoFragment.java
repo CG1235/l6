@@ -23,25 +23,25 @@ import org.w3c.dom.Text;
 
 public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
 
-  public static final String DOCTOR_NAME = "Name";
-  public static final String DOCTOR_SPECIALTY = "Specialty";
-  public static final String DOCTOR_ADDRESS = "Address";
-  public static final String DOCTOR_PHOTO_URL = "PhotoUrl";
-  public static final String DOCTOR_RATING = "Rating";
-  private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
+  public static final   String DOCTOR_NAME = "Name";
+  public static final   String DOCTOR_SPECIALTY = "Specialty";
+  public static final   String DOCTOR_ADDRESS = "Address";
+  public static final   String DOCTOR_PHOTO_URL = "PhotoUrl";
+  public static final   String DOCTOR_RATING = "Rating";
+  private static final  String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
 
-  private MapView mMapView;
-  private TextView mNameTv;
-  private TextView mSpecialtyTv;
-  private TextView mAddressTv;
-  private TextView mRatingNumberTv;
+  private MapView   mMapView;
+  private TextView  mNameTv;
+  private TextView  mSpecialtyTv;
+  private TextView  mAddressTv;
+  private TextView  mRatingNumberTv;
   private RatingBar mRatingBar;
   private ImageView mPhoto;
-  private int mPhotoUrl;
-  private String mDoctorName;
-  private String mDoctorSpecialty;
-  private String mDoctorAddress;
-  private float mDoctorRating;
+  private String    mDoctorName;
+  private String    mDoctorSpecialty;
+  private String    mDoctorAddress;
+  private float     mDoctorRating;
+  private int       mPhotoUrl;
 
   @Nullable
   @Override

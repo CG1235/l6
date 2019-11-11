@@ -21,9 +21,9 @@ import lombok.Setter;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
 
-  private FragmentActivity mContext;
-  private LayoutInflater mInflater;
-  private List<DoctorInfo> mDoctorList;
+  private FragmentActivity  mContext;
+  private LayoutInflater    mInflater;
+  private List<DoctorInfo>  mDoctorList;
 
   public RecyclerAdapter(FragmentActivity context, List<DoctorInfo> doctorList){
 
@@ -66,19 +66,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     return mDoctorList == null ? 0 : mDoctorList.size();
   }
 
+
+
   @Setter
   @Getter
   protected class ViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView mDoctorPhoto;
-    private TextView mDoctorName;
-    private TextView mDoctorSpecialty;
-    private TextView mDoctorAddress;
-    private TextView mRatingNumber;
+    private TextView  mDoctorName;
+    private TextView  mDoctorSpecialty;
+    private TextView  mDoctorAddress;
+    private TextView  mRatingNumber;
     private RatingBar mRatingBar;
-    private int mNameFieldHeight;
+    private int       mNameFieldHeight;
     private ViewGroup.LayoutParams mParams;
-    private int mIndex;
+    private int       mIndex;
 
     public ViewHolder(@NonNull View itemView) {
       super(itemView);

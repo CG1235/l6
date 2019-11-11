@@ -12,4 +12,5 @@
     <color name="navBarIconColor">#607d8a</color>
     <color name="SlightlyBlue">#89A8B7</color>
     <color name="StarsColor">#ffd500</color>
+    <color name="listBackGround">#f7f8f8</color>
 </resources>

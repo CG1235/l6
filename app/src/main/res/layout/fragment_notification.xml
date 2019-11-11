@@ -68,8 +68,9 @@
 
             <TextView
                 android:layout_width="@dimen/multiline_text_w"
-                android:layout_height="@dimen/multiline_text_h"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/multiline_text_margin_top"
+                android:maxLines="4"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:lineSpacingExtra="@dimen/multiline_text_line_spacing"
                 android:text="@string/bs_1"
@@ -189,6 +190,7 @@
                 android:id="@+id/user_description"
                 android:layout_width="@dimen/user_description_w"
                 android:layout_height="wrap_content"
+                android:maxLines="4"
                 android:layout_marginTop="@dimen/data_text_margin_top"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/bs_2"
@@ -244,6 +246,7 @@
                         android:id="@+id/doctor_info_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:maxLines="2"
                         android:layout_marginStart="@dimen/doctor_name_margin_start"
                         android:layout_marginTop="@dimen/doctor_name_margin_top"
                         android:fontFamily="@font/proxima_nova_semibold"
@@ -285,8 +288,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
+                        android:text="3.5"
                         android:textColor="@color/hintColor"
                         android:textSize="@dimen/smaller_text_size"
+                        app:layout_constraintBottom_toBottomOf="@+id/doctor_info_rating_bar"
                         app:layout_constraintStart_toEndOf="@id/doctor_info_rating_bar"
                         app:layout_constraintTop_toTopOf="@id/doctor_info_rating_bar" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -303,8 +308,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/WhiteColor"
                 android:textSize="@dimen/label_field_txt_size"
-                app:layout_constraintEnd_toEndOf="@+id/loc_input"
-                app:layout_constraintStart_toStartOf="@+id/card_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card_view" />
 
             <Button
@@ -320,8 +325,8 @@
                 android:textColor="@color/hintColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/loc_input"
-                app:layout_constraintStart_toStartOf="@+id/confirm_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

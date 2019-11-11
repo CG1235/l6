@@ -29,10 +29,10 @@
     <string name="location_field_hint">Your Location</string>
     <string name="next_button_txt">Next</string>
     <string name="telemedicine_splash">Telemedicine</string>
-    <string name="email_adress_hint">Email Adress</string>
+    <string name="email_adress_hint">Email Address</string>
     <string name="password_hint">Password</string>
     <string name="login_button_txt">Login</string>
-    <string name="signup_btn_text">signup</string>
+    <string name="signup_btn_text">sign up</string>
     <string name="nav_notification">Notification</string>
     <string name="nav_home">Home</string>
     <string name="nav_schedule">Schedule</string>
@@ -51,7 +51,7 @@
     <string name="description_optional">Description ( Optional)</string>
     <string name="describe_here">Describe Here</string>
     <string name="request">Request</string>
-    <string name="toolbar_new_request">Add</string>
+    <string name="toolbar_new_request">Home</string>
     <string name="notification">Notification</string>
     <string name="approved_request">Your Request Has Been Approved</string>
     <string name="user_req_name">Name</string>
@@ -61,8 +61,9 @@
     <string name="cancel_request">Cancel Request</string>
     <string name="description">Description</string>
     <string name="doctor_list">Doctor List</string>
-    <string name="doctor_contact">Doctor Contact</string>
+    <string name="doctor_contact">Doctor Details</string>
     <string name="short_description">Short Description</string>
-
     <string name="google_maps_API_key">AIzaSyAxzzyIwYzc0hsXcya8Hd9hL3uRfRfVplM</string>
+    <string name="your_login">Your Login</string>
+    <string name="your_password">Your Password</string>
 </resources>

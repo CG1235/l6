@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="splash_txt_size">27sp</dimen>
+    <dimen name="splash_txt_size">29sp</dimen>
     <!--    welcome activity-->
     <dimen name="welcome_text_font_size">23sp</dimen>
     <dimen name="welc_act_multiline_txt_size">12sp</dimen>
-    <dimen name="urgent_txt_size">13sp</dimen>
-    <dimen name="sign_up_txt_size">15dp</dimen>
+    <dimen name="urgent_txt_size">14sp</dimen>
+    <dimen name="sign_up_txt_size">16dp</dimen>
     <dimen name="sign_up_button_width">260dp</dimen>
     <dimen name="sign_up_button_height">45dp</dimen>
     <dimen name="welcome_text_view_width">320dp</dimen>
@@ -18,7 +18,7 @@
     <dimen name="lores_txt_line_spacing">6sp</dimen>
     <dimen name="sign_up_btn_margin_bottom">175dp</dimen>
     <dimen name="login_btn_margin_bottom">100dp</dimen>
-    <dimen name="login_btn_text_size">14sp</dimen>
+    <dimen name="login_btn_text_size">16sp</dimen>
     <dimen name="urgent_btn_margin_bottom">20dp</dimen>
     <!--    welcome activity /sign up activity-->
 
@@ -63,7 +63,7 @@
     <dimen name="login_login_btn_height">45dp</dimen>
     <dimen name="login_login_btn_margin_top">35dp</dimen>
     <dimen name="button_text_size">15sp</dimen>
-    <dimen name="signup_margin_top">50dp</dimen>
+    <dimen name="signup_margin_top">40dp</dimen>
 
     <!-- login activity/add fragment -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -83,7 +83,7 @@
     <dimen name="fab_size">47dp</dimen>
     <dimen name="nav_icon_size">14dp</dimen>
     <dimen name="nav_pading_top">0dp</dimen>
-
+    <dimen name="add_request_hint_size">12sp</dimen>
     <!--add fragment / notification fragment-->
     <dimen name="tick_size">40dp</dimen>
     <dimen name="circle_radius">110dp</dimen>
@@ -134,4 +134,25 @@
     <dimen name="list_name_h">15dp</dimen>
     <dimen name="list_specialty_w">140dp</dimen>
     <dimen name="list_cv_margin_top">5dp</dimen>
+    <!--Doctor list / Doctor info-->
+    <dimen name="d_info_cv_margin_top">70dp</dimen>
+    <dimen name="d_info_photo_margin_start">5dp</dimen>
+    <dimen name="d_info_description_margin_top">200dp</dimen>
+    <dimen name="d_info_big_text_size">18sp</dimen>
+    <dimen name="d_info_small_text_size">15sp</dimen>
+    <dimen name="d_info_description_h">80dp</dimen>
+    <dimen name="d_info_description_txt_margin_top">240dp</dimen>
+    <dimen name="d_info_line_spacing">4dp</dimen>
+    <dimen name="d_info_location_margin_top">360dp</dimen>
+    <dimen name="d_info_loc_icon_w">20dp</dimen>
+    <dimen name="d_info_loc_icon_h">30dp</dimen>
+    <dimen name="d_info_loc_icon_margin_top">400dp</dimen>
+    <dimen name="d_info_address_margin_start">10dp</dimen>
+    <dimen name="map_h">180dp</dimen>
+    <dimen name="map_margin_top">450dp</dimen>
+    <dimen name="d_info_button_margin_top">30dp</dimen>
+    <dimen name="d_info_button_margin_bottom">80dp</dimen>
+    <dimen name="d_info_rating_bar_margin_start">5dp</dimen>
+    <dimen name="d_info_rating_number_margin_start">20dp</dimen>
+    <dimen name="d_info_name_margin_top">40dp</dimen>
 </resources>

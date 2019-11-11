@@ -75,6 +75,7 @@
                 android:hint="@string/enter_full_name_hint"
                 android:inputType="textPersonName"
                 android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +105,7 @@
                 android:textSize="@dimen/input_hint_text_size"
                 android:inputType="textPersonName"
                 android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -133,10 +135,72 @@
                 android:textSize="@dimen/input_hint_text_size"
                 android:inputType="textPersonName"
                 android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/email_txt_view" />
+
+            <TextView
+                android:id="@+id/login_txt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/full_name_margin_start"
+                android:layout_marginTop="@dimen/field_label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/login"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/label_field_txt_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_input" />
+
+            <EditText
+                android:id="@+id/login_input"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginTop="@dimen/field_margin_top"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint="@string/your_login"
+                android:textSize="@dimen/input_hint_text_size"
+                android:inputType="textPersonName"
+                android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_txt_view" />
+
+            <TextView
+                android:id="@+id/password_txt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/full_name_margin_start"
+                android:layout_marginTop="@dimen/field_label_margin_top"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/password_hint"
+                android:textColor="@color/DarkColor"
+                android:textSize="@dimen/label_field_txt_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_input" />
+
+            <EditText
+                android:id="@+id/password_input"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginTop="@dimen/field_margin_top"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint="@string/your_password"
+                android:textSize="@dimen/input_hint_text_size"
+                android:inputType="textPersonName"
+                android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password_txt_view" />
+
 
             <TextView
                 android:id="@+id/phone_txt_view"
@@ -149,7 +213,7 @@
                 android:textColor="@color/DarkColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_input" />
+                app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
             <EditText
                 android:id="@+id/phone_input"
@@ -162,6 +226,7 @@
                 android:textSize="@dimen/input_hint_text_size"
                 android:inputType="textPersonName"
                 android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -191,6 +256,7 @@
                 android:textSize="@dimen/input_hint_text_size"
                 android:inputType="textPersonName"
                 android:paddingLeft="@dimen/hint_left_padding"
+                android:textColor="@color/DarkColor"
                 android:textColorHint="@color/hintColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

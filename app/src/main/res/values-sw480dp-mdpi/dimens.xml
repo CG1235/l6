@@ -60,7 +60,7 @@
     <dimen name="login_password_margin_top">40dp</dimen>
     <dimen name="login_login_btn_height">70dp</dimen>
     <dimen name="login_login_btn_margin_top">60dp</dimen>
-    <dimen name="signup_margin_top">80dp</dimen>
+    <dimen name="signup_margin_top">70dp</dimen>
     <dimen name="button_text_size">21sp</dimen>
 
     <!-- login activity/home activity -->
@@ -78,10 +78,10 @@
     <dimen name="request_margin_bottom">100dp</dimen>
     <dimen name="description_input_height">100dp</dimen>
     <dimen name="fab_h">110dp</dimen>
-    <dimen name="fab_size">65dp</dimen>
+    <dimen name="fab_size">70dp</dimen>
     <dimen name="nav_icon_size">20dp</dimen>
     <dimen name="nav_pading_top">2dp</dimen>
-
+    <dimen name="add_request_hint_size">12sp</dimen>
     <!--add fragment / notification fragment-->
     <dimen name="tick_size">70dp</dimen>
     <dimen name="circle_radius">180dp</dimen>
@@ -116,7 +116,7 @@
     <dimen name="dots_margin_end">10dp</dimen>
     <!--Notification fragment / Doctor list-->
     <dimen name="recycler_view_vertical_margin">10dp</dimen>
-    <dimen name="list_cv_content_padding">10dp</dimen>
+    <dimen name="list_cv_content_padding">15dp</dimen>
     <dimen name="list_doctor_photo_w">80dp</dimen>
     <dimen name="list_doctor_photo_h">80dp</dimen>
     <dimen name="list_doctor_photo_margin_start">5dp</dimen>
@@ -132,4 +132,25 @@
     <dimen name="list_name_h">25dp</dimen>
     <dimen name="list_specialty_w">140dp</dimen>
     <dimen name="list_cv_margin_top">10dp</dimen>
+    <!--Doctor list / Doctor info-->
+    <dimen name="d_info_cv_margin_top">100dp</dimen>
+    <dimen name="d_info_photo_margin_start">5dp</dimen>
+    <dimen name="d_info_big_text_size">24sp</dimen>
+    <dimen name="d_info_small_text_size">22sp</dimen>
+    <dimen name="d_info_description_h">80dp</dimen>
+    <dimen name="d_info_description_margin_top">320dp</dimen>
+    <dimen name="d_info_description_txt_margin_top">370dp</dimen>
+    <dimen name="d_info_line_spacing">4dp</dimen>
+    <dimen name="d_info_location_margin_top">510dp</dimen>
+    <dimen name="d_info_loc_icon_w">20dp</dimen>
+    <dimen name="d_info_loc_icon_h">30dp</dimen>
+    <dimen name="d_info_loc_icon_margin_top">550dp</dimen>
+    <dimen name="d_info_address_margin_start">10dp</dimen>
+    <dimen name="map_h">200dp</dimen>
+    <dimen name="map_margin_top">610dp</dimen>
+    <dimen name="d_info_button_margin_top">40dp</dimen>
+    <dimen name="d_info_button_margin_bottom">100dp</dimen>
+    <dimen name="d_info_rating_bar_margin_start">5dp</dimen>
+    <dimen name="d_info_rating_number_margin_start">30dp</dimen>
+    <dimen name="d_info_name_margin_top">30dp</dimen>
 </resources>

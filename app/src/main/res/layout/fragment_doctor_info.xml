@@ -49,11 +49,13 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/doctor_info_photo"
                         android:layout_width="@dimen/doctor_photo_w"
                         android:layout_height="@dimen/doctor_photo_h"
-                        android:layout_marginStart="@dimen/d_inco_photo_margin_start"
+                        android:layout_marginStart="@dimen/d_info_photo_margin_start"
                         android:src="@drawable/ic_home_icon"
                         app:civ_border_color="@android:color/transparent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,11 +67,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/doctor_name_margin_start"
-                        android:layout_marginTop="@dimen/doctor_name_margin_top"
+                        android:layout_marginTop="@dimen/d_info_name_margin_top"
                         android:fontFamily="@font/proxima_nova_semibold"
                         android:text="Dudung Sokmati"
                         android:textColor="@color/DarkColor"
-                        android:textSize="@dimen/smaller_text_size"
+                        android:textSize="@dimen/d_info_big_text_size"
                         app:layout_constraintStart_toEndOf="@+id/doctor_info_photo"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +83,7 @@
                         android:fontFamily="@font/proxima_nova_regular"
                         android:text="Eye Specialist"
                         android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/smaller_text_size"
+                        android:textSize="@dimen/d_info_big_text_size"
                         android:textStyle="italic"
                         app:layout_constraintStart_toStartOf="@id/doctor_info_name"
                         app:layout_constraintTop_toBottomOf="@id/doctor_info_name" />
@@ -91,7 +93,7 @@
                         style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/d_info_rating_bar_margin_start"
                         android:layout_marginTop="@dimen/specialty_and_rating_margin_top"
                         android:numStars="5"
                         android:scaleX="1.2"
@@ -105,12 +107,13 @@
                         android:id="@+id/doctor_info_rating_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="@dimen/d_info_rating_number_margin_start"
                         android:text="3.7"
                         android:textColor="@color/hintColor"
-                        android:textSize="@dimen/smaller_text_size"
+                        android:textSize="@dimen/d_info_big_text_size"
                         app:layout_constraintStart_toEndOf="@id/doctor_info_rating_bar"
-                        app:layout_constraintTop_toTopOf="@id/doctor_info_rating_bar" />
+                        app:layout_constraintTop_toTopOf="@id/doctor_info_rating_bar"
+                        app:layout_constraintBottom_toBottomOf="@id/doctor_info_rating_bar"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -129,13 +132,14 @@
             <TextView
                 android:id="@+id/short_descr_tv"
                 android:layout_width="@dimen/cv_w"
-                android:layout_height="@dimen/d_info_decription_h"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
                 android:layout_marginTop="@dimen/d_info_description_txt_margin_top"
                 android:fontFamily="@font/proxima_nova_regular"
                 android:lineSpacingExtra="@dimen/d_info_line_spacing"
                 android:text="@string/bs_1"
                 android:textColor="@color/hintColor"
-                android:textSize="@dimen/d_info_small_trxt_size"
+                android:textSize="@dimen/d_info_small_text_size"
                 app:layout_constraintStart_toStartOf="@id/card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,8 +176,7 @@
                 app:layout_constraintStart_toEndOf="@id/loc_img_view"
                 app:layout_constraintTop_toTopOf="@id/loc_img_view" />
 
-            <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/linear_layout"
                 android:layout_width="@dimen/cv_w"
@@ -201,7 +204,8 @@
                 android:textColor="@color/WhiteColor"
                 android:textSize="@dimen/login_btn_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/linear_layout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
@@ -211,8 +215,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbarHeight"
         android:background="@color/toolbarBgColor"
-        app:layout_constraintEnd_toEndOf="parent"
         android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -237,10 +241,10 @@
         android:id="@+id/three_dots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dots_margin_end"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="@dimen/dots_margin_end"
         app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,7 @@
                 android:id="@+id/doctor_name_list"
                 android:layout_width="@dimen/list_name_w"
                 android:layout_height="@dimen/list_name_h"
+                android:maxLines="2"
                 android:layout_marginStart="@dimen/list_text_name_margin_start"
                 android:lineSpacingExtra="0dp"
                 android:fontFamily="@font/proxima_nova_semibold"

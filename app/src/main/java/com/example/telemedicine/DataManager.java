@@ -73,6 +73,4 @@ public class DataManager {
   public void clearList(){
     mDoctorInfo.clear();
   }
-
-//  public List<DoctorInfo> getDoctorInfo(){return mDoctorInfo;}
 }

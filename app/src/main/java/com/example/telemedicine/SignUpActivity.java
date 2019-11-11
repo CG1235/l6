@@ -10,14 +10,17 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.method.PasswordTransformationMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class SignUpActivity extends AppCompatActivity {
 
   private ImageView mBackArrow;
   private String mActivityName;
+  private EditText mPassword;
 
   @Override
   public void finish() {
@@ -33,6 +36,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     mBackArrow = findViewById(R.id.back_arrow_image_view);
     mActivityName = getCallingActivity().getClassName();
+    mPassword = findViewById(R.id.password_input);
+    mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
     mBackArrow.setOnClickListener(view -> {
       if (mActivityName.equals("com.example.telemedicine.WelcomeActivity")){

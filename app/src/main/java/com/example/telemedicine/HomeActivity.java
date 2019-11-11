@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
     mNavigationView = findViewById(R.id.nav_bar);
 
+    disableMenuItems();
     openHomeFragment();
     mAddReqFab = findViewById(R.id.add_req_fab);
     mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1);
@@ -45,6 +48,14 @@ public class HomeActivity extends AppCompatActivity {
               .replace(R.id.fragment_container, new AddFragment())
               .commit()
     );
+  }
+
+  private void disableMenuItems() {
+    Menu menu = mNavigationView.getMenu();
+    MenuItem schedule = menu.findItem(R.id.nav_schedule);
+    schedule.setEnabled(false);
+    MenuItem profile = menu.findItem(R.id.nav_profile);
+    profile.setEnabled(false);
   }
 
   private void openHomeFragment() {
