@@ -157,6 +157,6 @@
     <dimen name="d_info_rating_bar_margin_start">5dp</dimen>
     <dimen name="d_info_rating_number_margin_start">30dp</dimen>
     <dimen name="d_info_name_margin_top">20dp</dimen>
-    <dimen name="toolbar_arrow_w">15dp</dimen>
-    <dimen name="toolbar_arrow_h">15dp</dimen>
+    <dimen name="toolbar_arrow_w">25dp</dimen>
+    <dimen name="toolbar_arrow_h">25dp</dimen>
 </resources>

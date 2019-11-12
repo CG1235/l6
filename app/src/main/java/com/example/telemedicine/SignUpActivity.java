@@ -13,6 +13,7 @@ import android.text.SpannableString;
 import android.text.method.PasswordTransformationMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -21,6 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
   private ImageView mBackArrow;
   private String mActivityName;
   private EditText mPassword;
+  private Button mNextBtn;
 
   @Override
   public void finish() {
@@ -38,6 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
     mActivityName = getCallingActivity().getClassName();
     mPassword = findViewById(R.id.password_input);
     mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+    mNextBtn = findViewById(R.id.next_button);
 
     mBackArrow.setOnClickListener(view -> {
       if (mActivityName.equals("com.example.telemedicine.WelcomeActivity")){
@@ -47,6 +50,11 @@ public class SignUpActivity extends AppCompatActivity {
         startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
         finish();
       }
+    });
+
+    mNextBtn.setOnClickListener(view -> {
+      startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+      finishAffinity();
     });
   }
 }

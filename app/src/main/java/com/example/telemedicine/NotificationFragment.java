@@ -20,6 +20,7 @@ public class NotificationFragment extends Fragment {
   private RatingBar mRatingBar;
   private TextView mIndicator;
   private ImageView mDoctorPhoto;
+  private OnViewCreatedListener onViewCreatedListener;
 
   @Nullable
   @Override
@@ -30,6 +31,9 @@ public class NotificationFragment extends Fragment {
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
+    if (onViewCreatedListener != null)
+      onViewCreatedListener.onViewCreated();
+
     mRatingBar = view.findViewById(R.id.doctor_info_rating_bar);
     mIndicator = view.findViewById(R.id.doctor_info_rating_number);
     mDoctorPhoto = view.findViewById(R.id.doctor_info_photo);
@@ -49,6 +53,14 @@ public class NotificationFragment extends Fragment {
                 System.out.println("==============================" + e.getMessage() + "    Error====================");
               }
             });
+  }
+
+  public void setOnViewCreatedListener(OnViewCreatedListener listener){
+    this.onViewCreatedListener = listener;
+  }
+
+  public interface OnViewCreatedListener{
+    void onViewCreated();
   }
 }
 

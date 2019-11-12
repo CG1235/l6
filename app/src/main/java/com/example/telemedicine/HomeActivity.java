@@ -7,11 +7,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
 
   private BottomNavigationView mNavigationView;
   private FloatingActionButton mAddReqFab;
@@ -27,26 +28,43 @@ public class HomeActivity extends AppCompatActivity {
     disableMenuItems();
     openHomeFragment();
     mAddReqFab = findViewById(R.id.add_req_fab);
-    mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1);
     mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
-      Fragment fragment = null;
+//      Fragment fragment = null;
       switch (menuItem.getItemId()){
         case R.id.nav_home:
-          fragment = new DoctorListFragment();
+//          fragment = new DoctorListFragment();
+            DoctorListFragment doctorListFragment = new DoctorListFragment();
+            getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.fragment_container, doctorListFragment)
+                  .addToBackStack(null)
+                  .commit();
           break;
         case R.id.nav_notification:
-          fragment = new NotificationFragment();
-          mNavigationView.removeBadge(R.id.nav_notification);
+//          fragment = new NotificationFragment();
+//          mNavigationView.removeBadge(R.id.nav_notification);
+            NotificationFragment notificationFragment = new NotificationFragment();
+            getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.fragment_container, notificationFragment)
+                  .addToBackStack(null)
+                  .commit();
+            notificationFragment.setOnViewCreatedListener(() ->
+                    mNavigationView.removeBadge(R.id.nav_notification));
           break;
       }
-      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+//      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
       return true;
     });
-    mAddReqFab.setOnClickListener(view ->
+    mAddReqFab.setOnClickListener(view -> {
+      AddFragment fragment = new AddFragment();
       getSupportFragmentManager()
-              .beginTransaction()
-              .replace(R.id.fragment_container, new AddFragment())
-              .commit()
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit();
+      fragment.setOnRequestClickedListener(() ->
+              mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1));
+    }
     );
   }
 
