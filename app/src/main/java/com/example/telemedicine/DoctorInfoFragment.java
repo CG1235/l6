@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -128,7 +129,9 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
 
   @Override
   public void onMapReady(GoogleMap map) {
-    map.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+    map.setMapType(map.MAP_TYPE_SATELLITE);
+    map.addMarker(new MarkerOptions().position(new LatLng(43.653656, -79.378640)).title("Marker"));
+    map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.653656, -79.378640), 15.0f));
   }
 
   @Override

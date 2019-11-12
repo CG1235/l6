@@ -44,11 +44,11 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="@dimen/lores_txt_view_width"
-        android:layout_height="@dimen/lores_txt_view_height"
-        android:layout_marginTop="@dimen/lores_txt_margin_top"
+        android:layout_width="@dimen/bs1_txt_view_width"
+        android:layout_height="@dimen/bs1_txt_view_height"
+        android:layout_marginTop="@dimen/bs1_txt_margin_top"
         android:fontFamily="@font/proxima_nova_regular"
-        android:lineSpacingExtra="@dimen/lores_txt_line_spacing"
+        android:lineSpacingExtra="@dimen/bs1_txt_line_spacing"
         android:text="@string/bs_1"
         android:textAlignment="center"
         android:textColor="@color/WhiteColor"
