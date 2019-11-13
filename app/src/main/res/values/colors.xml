@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#07da5f</color>
-    <color name="colorPrimaryAlpha">#3507DA5F</color>
+    <color name="colorPrimaryAlpha">#5E07DA5F</color>
     <color name="colorPrimaryDark">#07da5f</color>
     <color name="colorAccent">#07da5f</color>
     <color name="greenTextColor">#07da5f</color>
     <color name="WhiteColor">#FFFFFF</color>
-    <color name="WhiteColorAlpha">#58FFFFFF</color>
+    <color name="WhiteColorAlpha">#40FFFFFF</color>
     <color name="toolbarBgColor">#07da5f</color>
     <color name="DarkColor">#282828</color>
     <color name="hintColor">#7D7B7B</color>

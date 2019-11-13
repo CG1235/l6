@@ -17,7 +17,7 @@
     <dimen name="bs1_txt_line_spacing">6sp</dimen>
     <dimen name="sign_up_btn_margin_bottom">200dp</dimen>
     <dimen name="login_btn_margin_bottom">120dp</dimen>
-    <dimen name="login_btn_text_size">14sp</dimen>
+    <dimen name="login_btn_text_size">17sp</dimen>
     <dimen name="urgent_btn_margin_bottom">30dp</dimen>
 
     <!--    welcome screen/sign up screen-->

@@ -103,9 +103,11 @@ public class SignUpActivity extends AppCompatActivity {
             finishAffinity();
           } else{
             alarm("Too short name");
+            mFullName.setSelection(0);
           }
         } else{
           alarm("Wrong email input");
+          mEmail.setSelection(0);
         }
 //      } else{
 //        alarm("Complete all fields!");

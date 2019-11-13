@@ -37,6 +37,7 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   private String    mDoctorAddress;
   private float     mDoctorRating;
   private int       mPhotoUrl;
+  private ImageView mBackArrow;
 
   @Nullable
   @Override
@@ -48,6 +49,8 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
+    mBackArrow = view.findViewById(R.id.info_back_arrow_image_view);
+
     mNameTv = view.findViewById(R.id.doctor_info_name);
     mSpecialtyTv = view.findViewById(R.id.doctor_info_specialty);
     mAddressTv = view.findViewById(R.id.doctor_info_location_street);
@@ -58,6 +61,12 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     initializeData();
     setData();
     initMap(savedInstanceState, view);
+
+    mBackArrow.setOnClickListener(view1 -> getActivity().getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.fragment_container, new DoctorListFragment())
+            .addToBackStack(null)
+            .commit());
   }
 
   private void initializeData() {

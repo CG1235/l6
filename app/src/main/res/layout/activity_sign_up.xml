@@ -19,6 +19,7 @@
             <ImageView
                 android:id="@+id/circle_image_view"
                 android:layout_width="@dimen/circle_width"
+                android:background="@drawable/circle_image_view"
                 android:layout_height="@dimen/circle_height"
                 android:layout_marginTop="@dimen/circle_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"

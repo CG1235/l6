@@ -72,8 +72,8 @@ public class HomeActivity extends AppCompatActivity{
             .replace(R.id.fragment_container, fragment)
             .commit();
       fragment.setOnRequestClickedListener(() -> {
-                MenuItem notification = mMenu.findItem(R.id.nav_notification);
-                notification.setEnabled(true);
+//                MenuItem notification = mMenu.findItem(R.id.nav_notification);
+//                notification.setEnabled(true);
                 mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1);}
               );
     }
@@ -86,11 +86,17 @@ public class HomeActivity extends AppCompatActivity{
     schedule.setEnabled(false);
     MenuItem profile = mMenu.findItem(R.id.nav_profile);
     profile.setEnabled(false);
-    MenuItem notification = mMenu.findItem(R.id.nav_notification);
-    notification.setEnabled(false);
+//    MenuItem notification = mMenu.findItem(R.id.nav_notification);
+//    notification.setEnabled(false);
   }
 
   private void openHomeFragment() {
     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DoctorListFragment()).commit();
+  }
+
+  @Override
+  public void onBackPressed() {
+//    super.onBackPressed();
+    finish();
   }
 }
