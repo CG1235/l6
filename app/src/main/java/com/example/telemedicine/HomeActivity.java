@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,12 +25,17 @@ public class HomeActivity extends AppCompatActivity{
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
     mNavigationView = findViewById(R.id.nav_bar);
 
     disableMenuItems();
     openHomeFragment();
+
     mAddReqFab = findViewById(R.id.add_req_fab);
+    Drawable fabTint = getResources().getDrawable(R.drawable.ic_add_black_24dp);
+    Drawable willBeWhite = fabTint.getConstantState().newDrawable();
+    willBeWhite.mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
+    mAddReqFab.setImageDrawable(willBeWhite);
+
     mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
 //      Fragment fragment = null;
       switch (menuItem.getItemId()){
