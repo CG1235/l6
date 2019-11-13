@@ -120,7 +120,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/disease_input" />
 
             <EditText
-                android:id="@+id/loc_input"
+                android:id="@+id/location_input"
                 android:layout_width="@dimen/input_field_width"
                 android:layout_height="@dimen/input_field_height"
                 android:layout_marginTop="@dimen/field_margin_top"
@@ -147,7 +147,7 @@
                 android:textColor="@color/DarkColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loc_input" />
+                app:layout_constraintTop_toBottomOf="@+id/location_input" />
 
             <EditText
                 android:id="@+id/description_input"
@@ -180,8 +180,8 @@
                 android:textColor="@color/WhiteColor"
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/loc_input"
-                app:layout_constraintStart_toStartOf="@+id/loc_input"
+                app:layout_constraintEnd_toEndOf="@+id/location_input"
+                app:layout_constraintStart_toStartOf="@+id/location_input"
                 app:layout_constraintTop_toBottomOf="@+id/description_input" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,12 +19,9 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
-public class NotificationFragment extends Fragment {
+import static com.example.telemedicine.Constants.*;
 
-  public static final String FRAGMENT_ADD_NAME = "com.example.telemedicine.Name";
-  public static final String FRAGMENT_ADD_DISEASE = "com.example.telemedicine.DISEASE";
-  public static final String FRAGMENT_ADD_LOCATION = "com.example.telemedicine.LOCATION";
-  public static final String FRAGMENT_ADD_DESCRIPTION = "com.example.telemedicine.DESCRIPTION";
+public class NotificationFragment extends Fragment {
 
   private RatingBar mRatingBar;
   private TextView mIndicator;
@@ -76,12 +73,12 @@ public class NotificationFragment extends Fragment {
   }
 
   private void fillTextViews() {
-    SharedPreferences sp = getActivity().getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE);
+    SharedPreferences sp = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
 
-    String name = sp.getString("NAME", "");
-    String disease = sp.getString("DISEASE", "");
-    String location = sp.getString("LOCATION", "");
-    String description = sp.getString("DESCRIPTION", "");
+    String name = sp.getString(PATIENT_NAME, "");
+    String disease = sp.getString(PATIENT_DISEASE, "");
+    String location = sp.getString(PATIENT_LOCATION, "");
+    String description = sp.getString(PATIENT_DESCRIPTION, "");
 
     mName.setText(name);
     mDisease.setText(disease);

@@ -13,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import static com.example.telemedicine.Constants.*;
+
 public class AddFragment extends Fragment {
+
 
   private OnRequestClickedListener onRequestClickedListener;
   private Button mRequset;
@@ -33,7 +36,7 @@ public class AddFragment extends Fragment {
 
     mNameEdTxt = view.findViewById(R.id.name_input);
     mDiseaseEdTxt = view.findViewById(R.id.disease_input);
-    mLocationEdTxt = view.findViewById(R.id.loc_input);
+    mLocationEdTxt = view.findViewById(R.id.location_input);
     mDescriptionEdTxt = view.findViewById(R.id.description_input);
 
     mRequset = view.findViewById(R.id.add_fragment_request_button);
@@ -44,12 +47,12 @@ public class AddFragment extends Fragment {
       String location = mLocationEdTxt.getText().toString();
       String description = mDescriptionEdTxt.getText().toString();
 
-      SharedPreferences sp = getActivity().getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE);
+      SharedPreferences sp = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
       SharedPreferences.Editor editor = sp.edit();
-      editor.putString("NAME", name);
-      editor.putString("DISEASE", disease);
-      editor.putString("LOCATION", location);
-      editor.putString("DESCRIPTION", description);
+      editor.putString(PATIENT_NAME, name);
+      editor.putString(PATIENT_DISEASE, disease);
+      editor.putString(PATIENT_LOCATION, location);
+      editor.putString(PATIENT_DESCRIPTION, description);
       editor.apply();
 
       if (onRequestClickedListener != null)

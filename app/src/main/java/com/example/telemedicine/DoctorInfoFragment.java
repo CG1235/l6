@@ -20,16 +20,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.w3c.dom.Text;
+
+import static com.example.telemedicine.Constants.*;
 
 public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
-
-  public static final   String DOCTOR_NAME = "Name";
-  public static final   String DOCTOR_SPECIALTY = "Specialty";
-  public static final   String DOCTOR_ADDRESS = "Address";
-  public static final   String DOCTOR_PHOTO_URL = "PhotoUrl";
-  public static final   String DOCTOR_RATING = "Rating";
-  private static final  String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
 
   private MapView   mMapView;
   private TextView  mNameTv;

@@ -19,6 +19,7 @@ public class HomeActivity extends AppCompatActivity{
 
   private BottomNavigationView mNavigationView;
   private FloatingActionButton mAddReqFab;
+  private Menu mMenu;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -70,18 +71,23 @@ public class HomeActivity extends AppCompatActivity{
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit();
-      fragment.setOnRequestClickedListener(() ->
-              mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1));
+      fragment.setOnRequestClickedListener(() -> {
+                MenuItem notification = mMenu.findItem(R.id.nav_notification);
+                notification.setEnabled(true);
+                mNavigationView.getOrCreateBadge(R.id.nav_notification).setNumber(1);}
+              );
     }
     );
   }
 
   private void disableMenuItems() {
-    Menu menu = mNavigationView.getMenu();
-    MenuItem schedule = menu.findItem(R.id.nav_schedule);
+    mMenu = mNavigationView.getMenu();
+    MenuItem schedule = mMenu.findItem(R.id.nav_schedule);
     schedule.setEnabled(false);
-    MenuItem profile = menu.findItem(R.id.nav_profile);
+    MenuItem profile = mMenu.findItem(R.id.nav_profile);
     profile.setEnabled(false);
+    MenuItem notification = mMenu.findItem(R.id.nav_notification);
+    notification.setEnabled(false);
   }
 
   private void openHomeFragment() {

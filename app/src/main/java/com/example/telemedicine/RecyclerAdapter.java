@@ -19,6 +19,8 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+import static com.example.telemedicine.Constants.*;
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
 
   private FragmentActivity  mContext;
@@ -97,23 +99,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         DoctorInfoFragment fragment = new DoctorInfoFragment();
 
         Bundle args = new Bundle();
-        args.putString(DoctorInfoFragment.DOCTOR_NAME, mDoctorList.get(mIndex).getMName());
-        args.putString(DoctorInfoFragment.DOCTOR_SPECIALTY, mDoctorList.get(mIndex).getMSpecialty());
-        args.putString(DoctorInfoFragment.DOCTOR_ADDRESS, mDoctorList.get(mIndex).getMAddress());
-        args.putInt(DoctorInfoFragment.DOCTOR_PHOTO_URL, mDoctorList.get(mIndex).getMPhotoUrl());
-        args.putFloat(DoctorInfoFragment.DOCTOR_RATING, mDoctorList.get(mIndex).getMRating());
+        args.putString(DOCTOR_NAME, mDoctorList.get(mIndex).getMName());
+        args.putString(DOCTOR_SPECIALTY, mDoctorList.get(mIndex).getMSpecialty());
+        args.putString(DOCTOR_ADDRESS, mDoctorList.get(mIndex).getMAddress());
+        args.putInt(DOCTOR_PHOTO_URL, mDoctorList.get(mIndex).getMPhotoUrl());
+        args.putFloat(DOCTOR_RATING, mDoctorList.get(mIndex).getMRating());
         fragment.setArguments(args);
 
         mContext.getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit();
-
-//        FragmentManager manager = mContext.getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.replace(R.id.fragment_container, fragment);
-//        transaction.addToBackStack(null);
-//        transaction.commit();
       });
     }
   }

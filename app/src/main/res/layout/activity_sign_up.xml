@@ -246,7 +246,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/phone_input" />
 
             <EditText
-                android:id="@+id/loc_input"
+                android:id="@+id/location_input"
                 android:layout_width="@dimen/input_field_width"
                 android:layout_height="@dimen/input_field_height"
                 android:layout_marginTop="@dimen/field_margin_top"
@@ -268,16 +268,16 @@
                 android:layout_height="@dimen/next_button_height"
                 android:layout_marginTop="@dimen/next_button_margin_top"
                 android:layout_marginBottom="@dimen/next_btn_margin_bottom"
-                android:background="@drawable/shape_green"
+                android:background="@drawable/button_state_style"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:textSize="@dimen/label_field_txt_size"
                 android:text="@string/next_button_txt"
                 android:textAllCaps="false"
                 android:textColor="@color/WhiteColor"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/loc_input"
-                app:layout_constraintStart_toStartOf="@+id/loc_input"
-                app:layout_constraintTop_toBottomOf="@+id/loc_input" />
+                app:layout_constraintEnd_toEndOf="@+id/location_input"
+                app:layout_constraintStart_toStartOf="@+id/location_input"
+                app:layout_constraintTop_toBottomOf="@+id/location_input" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
