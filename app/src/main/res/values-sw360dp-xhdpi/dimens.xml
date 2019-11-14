@@ -81,8 +81,8 @@
     <dimen name="description_input_height">110dp</dimen>
     <dimen name="fab_h">60dp</dimen>
     <dimen name="fab_size">50dp</dimen>
-    <dimen name="nav_icon_size">14dp</dimen>
-    <dimen name="nav_pading_top">0dp</dimen>
+    <dimen name="nav_icon_size">20dp</dimen>
+    <dimen name="nav_padding_top">0dp</dimen>
     <dimen name="add_request_hint_size">14sp</dimen>
     <!--add fragment / notification fragment-->
     <dimen name="tick_size">60dp</dimen>

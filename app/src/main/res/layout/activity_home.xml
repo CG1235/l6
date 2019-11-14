@@ -39,9 +39,8 @@
             android:layout_height="@dimen/nav_bar_h"
             android:layout_gravity="bottom"
             android:background="@android:color/white"
-            android:textAlignment="center"
-            android:paddingTop="@dimen/nav_pading_top"
-            app:elevation="2dp"
+            android:textAlignment="gravity"
+            android:paddingTop="@dimen/nav_padding_top"
             app:itemIconSize="@dimen/nav_icon_size"
             app:itemIconTint="@color/bottom_nav_items_color"
             app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
@@ -52,6 +51,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_nav" />
+
+<!--        android:theme="@style/BottomNavigationView"-->
 
         <View
             android:id="@+id/shadow"

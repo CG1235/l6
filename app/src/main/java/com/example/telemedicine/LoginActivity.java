@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import static com.example.telemedicine.Constants.REQUEST_CODE;
 
@@ -55,7 +56,12 @@ public class LoginActivity extends AppCompatActivity {
     mEmail.addTextChangedListener(watcher);
     mPassword.addTextChangedListener(watcher);
 
-    mLoginButton.setOnClickListener(view ->
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class)));
+    mLoginButton.setOnClickListener(view -> {
+      if (mEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}")){
+        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+      } else {
+        Toast.makeText(LoginActivity.this, "Incorrect email pattern", Toast.LENGTH_LONG).show();
+      }
+    });
   }
 }

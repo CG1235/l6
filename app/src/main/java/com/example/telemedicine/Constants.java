@@ -13,4 +13,5 @@ public class Constants {
   public static final   String PATIENT_DESCRIPTION  = "com.example.telemedicine.DESCRIPTION";
   public static final   String SHARED_PREFS         = "com.example.telemedicine.SHARED_PREFS";
   public static final   int REQUEST_CODE            = 8841;
+  public static final   int RESULT_LOAD_PHOTO       = 666;
 }

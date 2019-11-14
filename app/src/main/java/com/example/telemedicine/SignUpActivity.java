@@ -1,17 +1,34 @@
 package com.example.telemedicine;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Base64;
+import android.util.Base64OutputStream;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+import static com.example.telemedicine.Constants.*;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -26,6 +43,9 @@ public class SignUpActivity extends AppCompatActivity {
   private EditText mPhone;
   private EditText mLocation;
   private TextWatcher mWatcher;
+  private ImageView mPhoto;
+
+  public static final String TAG = "base64";
 
   @Override
   public void finish() {
@@ -41,6 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     mBackArrow = findViewById(R.id.back_arrow_image_view);
     mActivityName = getCallingActivity().getClassName();
+    mPhoto = findViewById(R.id.circle_image_view);
 
     mPassword = findViewById(R.id.password_input);
     mFullName = findViewById(R.id.full_name_input);
@@ -96,7 +117,6 @@ public class SignUpActivity extends AppCompatActivity {
     mLocation.addTextChangedListener(mWatcher);
 
     mNextBtn.setOnClickListener(view -> {
-//      if (fieldsNotEmpty()){
         if (mEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}")){
           if (mFullName.getText().length() > 4){
             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
@@ -109,20 +129,45 @@ public class SignUpActivity extends AppCompatActivity {
           alarm("Wrong email input");
           mEmail.setSelection(0);
         }
-//      } else{
-//        alarm("Complete all fields!");
-//      }
+    });
+
+    mPhoto.setOnClickListener(view -> {
+      startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI),
+              RESULT_LOAD_PHOTO);
     });
   }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode ==RESULT_LOAD_PHOTO && resultCode == RESULT_OK){
+      Uri photoUri = data.getData();
+      if (photoUri != null){
+        Bitmap b = null;
+        try {
+          b = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoUri);
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        b.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        String encoded = Base64.encodeToString(byteArray, Base64.NO_WRAP);
+        System.out.println("++++++++++++++ " + encoded + " ++++++++++++++++++++++++++");
+        byteArray = Base64.decode(encoded, Base64.DEFAULT);
+        encoded.replaceAll("\\s+", "");
+        System.out.println("++++++++++++++ " + encoded);
+      }
+      mPhoto.setImageURI(photoUri);
+      System.out.println("================ " + photoUri.toString() + " =======================");
+    }
+  }
+
 
   private void alarm(String str) {
     Toast.makeText(SignUpActivity.this, str, Toast.LENGTH_LONG).show();
   }
 
-  private boolean fieldsNotEmpty() {
-    return (mFullName.getText().length() > 0 && mBirthday.getText().length() > 0 &&
-            mEmail.getText().length() > 0 && mLogin.getText().length() > 0 &&
-            mPassword.getText().length() > 0 && mPhone.getText().length() > 0 &&
-            mLocation.getText().length() > 0);
-  }
 }

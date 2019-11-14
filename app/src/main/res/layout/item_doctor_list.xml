@@ -23,7 +23,7 @@
                 android:layout_width="@dimen/list_doctor_photo_w"
                 android:layout_height="@dimen/list_doctor_photo_h"
                 android:layout_marginStart="@dimen/list_doctor_photo_margin_start"
-                android:src="@drawable/ic_home_icon"
+                android:src="@drawable/ic_add_photos_circle"
                 app:civ_border_color="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

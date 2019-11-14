@@ -73,16 +73,16 @@
     <dimen name="gr_rect_h">60dp</dimen>
     <dimen name="shadow_h">10dp</dimen>
     <dimen name="fab_margin_bottom">5dp</dimen>
-    <dimen name="nav_bar_h">50dp</dimen>
-    <dimen name="nav_bar_h_plus_shadow_h">60dp</dimen>
+    <dimen name="nav_bar_h">52dp</dimen>
+    <dimen name="nav_bar_h_plus_shadow_h">62dp</dimen>
     <dimen name="fields_margin_start">25dp</dimen>
     <dimen name="field1_margin_top">40dp</dimen>
     <dimen name="request_margin_bottom">90dp</dimen>
     <dimen name="description_input_height">90dp</dimen>
     <dimen name="fab_h">60dp</dimen>
     <dimen name="fab_size">60dp</dimen>
-    <dimen name="nav_icon_size">18dp</dimen>
-    <dimen name="nav_pading_top">0dp</dimen>
+    <dimen name="nav_icon_size">20dp</dimen>
+    <dimen name="nav_padding_top">0dp</dimen>
     <dimen name="add_request_hint_size">12sp</dimen>
     <!--add fragment / notification fragment-->
     <dimen name="tick_size">60dp</dimen>

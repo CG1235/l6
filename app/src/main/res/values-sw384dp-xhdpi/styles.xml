@@ -19,13 +19,13 @@
         <item name="fontFamily">@font/proxima_nova_regular</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingTop">3dp</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">10sp</item>
     </style>
     <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="fontFamily">@font/proxima_nova_regular</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingTop">3dp</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">11sp</item>
     </style>
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">@color/SlightlyBlue</item>
@@ -33,4 +33,4 @@
     </style>
 </resources>
 
-<!--    Theme.AppCompat.DayNight.NoActionBar"-->
+    <!--    Theme.AppCompat.DayNight.NoActionBar"-->
