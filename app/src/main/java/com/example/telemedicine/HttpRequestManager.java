@@ -10,14 +10,22 @@ import com.android.volley.NetworkError;
 import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
+import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.telemedicine.Interfaces.OnLoginFailedListener;
+import com.example.telemedicine.Interfaces.OnLoginSucceedListener;
+import com.example.telemedicine.Interfaces.OnRegistrationFailedListener;
+import com.example.telemedicine.Interfaces.OnRegistrationFinishedListener;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +36,8 @@ public class HttpRequestManager {
 
   private OnRegistrationFinishedListener onRegistrationFinishedListener;
   private OnRegistrationFailedListener onRegistrationFailedListener;
+  private OnLoginSucceedListener onLoginSucceedListener;
+  private OnLoginFailedListener onLoginFailedListener;
 
 
   public void registerUser(Context ctx, UserInfo userInfo) throws JSONException {
@@ -86,17 +96,40 @@ public class HttpRequestManager {
     Volley.newRequestQueue(ctx).add(request);
   }
 
-  public void logInUser(Context ctx, List<String> credentials){
+  public void authUser(Context ctx, ArrayList<String> credentials) throws JSONException {
+    String authUrl = API_URL + AUTH_URL;
 
+    JSONObject req = new JSONObject();
+    req.put(EMAIL, credentials.get(0));
+    req.put(PASSWORD, credentials.get(1));
+
+    JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, authUrl, req,
+            response -> {
+              if(onLoginSucceedListener != null){
+                onLoginSucceedListener.onLoginSucceed(response);
+              }
+            }, error -> {
+                Toast.makeText(ctx, "Auth error" + error.getMessage(), Toast.LENGTH_LONG).show();
+                if (onLoginFailedListener != null){
+                  onLoginFailedListener.onLoginFailed(error);
+                }
+            }){
+//      @Override
+//      protected Map<String, String> getParams() throws AuthFailureError {
+//        Map<String, String> params = new HashMap<>();
+//        params.put("Content-Type", "application/x-www-form-urlencoded");
+//        params.put(EMAIL, credentials.get(0));
+//        params.put(PASSWORD, credentials.get(1));
+//        return params;
+//      }
+    };
+    request.setRetryPolicy(new DefaultRetryPolicy(30000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    request.setShouldCache(false);
+    Volley.newRequestQueue(ctx).add(request);
   }
 
-  public interface OnRegistrationFinishedListener{
-    void onRegistrationFinished(String response);
-  }
-
-  public interface OnRegistrationFailedListener{
-    void onRegistrationFailed(VolleyError error);
-  }
 
   public void setOnRegistrationFinishedListener(OnRegistrationFinishedListener listener){
     this.onRegistrationFinishedListener = listener;
@@ -106,8 +139,18 @@ public class HttpRequestManager {
     this.onRegistrationFailedListener = listener;
   }
 
+  public void setOnLoginSucceedListener(OnLoginSucceedListener listener){
+    this.onLoginSucceedListener = listener;
+  }
+
+  public void setOnLoginFailedListener(OnLoginFailedListener listener){
+    this.onLoginFailedListener = listener;
+  }
+
   HttpRequestManager(){
     onRegistrationFinishedListener = null;
     onRegistrationFailedListener = null;
+    onLoginSucceedListener = null;
+    onLoginFailedListener = null;
   }
 }

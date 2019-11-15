@@ -10,7 +10,6 @@ public class DataManager {
   private static DataManager mInstance = null;
   private List<DoctorInfo> mDoctorInfo = new ArrayList<>();
 
-
   public static DataManager getInstance(){
     if (mInstance == null)
       mInstance = new DataManager();

@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.telemedicine.Interfaces.OnRequestClickedListener;
+
 import static com.example.telemedicine.Constants.*;
 
 public class AddFragment extends Fragment {
@@ -63,10 +65,6 @@ public class AddFragment extends Fragment {
   void setOnRequestClickedListener(OnRequestClickedListener listener){
     this.onRequestClickedListener = listener;
 
-  }
-
-  public interface OnRequestClickedListener{
-    void onRequest();
   }
 }
 

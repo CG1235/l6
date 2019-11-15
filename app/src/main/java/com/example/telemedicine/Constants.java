@@ -12,9 +12,11 @@ public class Constants {
   public static final   String PATIENT_LOCATION     = "com.example.telemedicine.LOCATION";
   public static final   String PATIENT_DESCRIPTION  = "com.example.telemedicine.DESCRIPTION";
   public static final   String SHARED_PREFS         = "com.example.telemedicine.SHARED_PREFS";
+  public static final   String TOKEN_SHARED_PREFS   = "com.example.telemedicine.TOKEN_SHARED_PREFS";
   public static final   String API_URL              = "http://81.180.72.17/";
   public static final   String REG_URL              = "api/Register/UserReg";
-  public static final   String FULL_NAME            =  "FullName";
+  public static final   String AUTH_URL             = "api/Login/UserAuth";
+  public static final   String FULL_NAME            = "FullName";
   public static final   String BIRTHDAY             = "Birthday";
   public static final   String EMAIL                = "Email";
   public static final   String PHONE                = "Phone";

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.telemedicine.Interfaces.OnViewCreatedListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -88,10 +89,6 @@ public class NotificationFragment extends Fragment {
 
   public void setOnViewCreatedListener(OnViewCreatedListener listener){
     this.onViewCreatedListener = listener;
-  }
-
-  public interface OnViewCreatedListener{
-    void onViewCreated();
   }
 }
 
