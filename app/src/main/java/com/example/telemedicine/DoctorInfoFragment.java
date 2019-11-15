@@ -1,7 +1,10 @@
 package com.example.telemedicine;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
+import java.io.ByteArrayOutputStream;
+
 import static com.example.telemedicine.Constants.*;
 
 public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
@@ -38,6 +43,8 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   private float     mDoctorRating;
   private int       mPhotoUrl;
   private ImageView mBackArrow;
+  private String mAbout;
+  private Bitmap mPhotoBitmap;
 
   @Nullable
   @Override
@@ -75,11 +82,19 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     mDoctorAddress = getArguments().getString(DOCTOR_ADDRESS);
     mPhotoUrl = getArguments().getInt(DOCTOR_PHOTO_URL);
     mDoctorRating = getArguments().getFloat(DOCTOR_RATING);
+    mAbout = getArguments().getString(DOCTOR_ABOUT);
+    String base64photo = getArguments().getString(DOCTOR_BASE_64_PHOTO);
+
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    byte[] byteArray = outputStream.toByteArray();
+    byteArray = Base64.decode(base64photo, Base64.DEFAULT);
+    mPhotoBitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
   }
 
   private void setData() {
-    Drawable image = getResources().getDrawable(mPhotoUrl);
-    mPhoto.setImageDrawable(image);
+//    Drawable image = getResources().getDrawable(mPhotoUrl);
+//    mPhoto.setImageDrawable(image);
+    mPhoto.setImageBitmap(mPhotoBitmap);
     mNameTv.setText(mDoctorName);
     mSpecialtyTv.setText(mDoctorSpecialty);
     mAddressTv.setText(mDoctorAddress);

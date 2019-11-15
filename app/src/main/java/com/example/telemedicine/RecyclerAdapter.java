@@ -1,7 +1,10 @@
 package com.example.telemedicine;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,13 +58,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
       holder.mDoctorName.setLayoutParams(holder.mParams);
     }
     holder.mIndex = position;
+    holder.mAbout = info.getMAbout();
+    holder.mBase64Photo = info.getMPhoto();
     holder.mDoctorName.setText(info.getMName());
     holder.mDoctorSpecialty.setText(info.getMSpecialty());
     holder.mDoctorAddress.setText(info.getMAddress());
     holder.mRatingNumber.setText(String.valueOf(info.getMRating()));
     holder.mRatingBar.setRating(info.getMRating());
-    Drawable image = mContext.getResources().getDrawable(info.getMPhotoUrl());
-    holder.mDoctorPhoto.setImageDrawable(image);
+
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    byte[] byteArray = outputStream.toByteArray();
+    byteArray = Base64.decode(info.getMPhoto(), Base64.DEFAULT);
+    Bitmap img = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+    holder.mDoctorPhoto.setImageBitmap(img);
+
+//    Drawable image = mContext.getResources().getDrawable(info.getMPhotoUrl());
+//    holder.mDoctorPhoto.setImageDrawable(image);
   }
 
   @Override
@@ -83,6 +96,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private int       mNameFieldHeight;
     private ViewGroup.LayoutParams mParams;
     private int       mIndex;
+    private String    mAbout;
+    private String    mBase64Photo;
 
     public ViewHolder(@NonNull View itemView) {
       super(itemView);
@@ -104,6 +119,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         args.putString(DOCTOR_ADDRESS, mDoctorList.get(mIndex).getMAddress());
         args.putInt(DOCTOR_PHOTO_URL, mDoctorList.get(mIndex).getMPhotoUrl());
         args.putFloat(DOCTOR_RATING, mDoctorList.get(mIndex).getMRating());
+        args.putString(DOCTOR_ABOUT, mDoctorList.get(mIndex).getMAbout());
+        args.putString(DOCTOR_BASE_64_PHOTO, mDoctorList.get(mIndex).getMPhoto());
+
         fragment.setArguments(args);
 
         mContext.getSupportFragmentManager().beginTransaction()

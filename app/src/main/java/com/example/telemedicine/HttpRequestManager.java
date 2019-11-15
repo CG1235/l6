@@ -21,6 +21,7 @@ import com.example.telemedicine.Interfaces.OnLoginSucceedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFailedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFinishedListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -125,17 +126,26 @@ public class HttpRequestManager {
     String url = API_URL + GET_DOCTOR_LIST_URL;
     StringRequest request = new StringRequest(Request.Method.GET, url,
             response -> {
+              ArrayList<DoctorInfo> doctors = new ArrayList<>();
+              try {
+                JSONArray jsonArray = new JSONArray(response);
+                doctors = parseJsonResponse(jsonArray);
+              } catch (JSONException e) {
+                e.printStackTrace();
+              }
               if (onDoctorListLoadedListener != null){
-                onDoctorListLoadedListener.onDoctorListLoaded(response);
+                onDoctorListLoadedListener.onDoctorListLoaded(doctors);
               }
             },
-            error -> {}){
+            error -> {
+              System.out.println("Error" + error.getMessage());
+            }){
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/x-www-form-urlencoded");
         headers.put("token", token);
-        return super.getHeaders();
+        return headers;
       }
     };
     request.setRetryPolicy(new DefaultRetryPolicy(30000,
@@ -143,6 +153,22 @@ public class HttpRequestManager {
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
     request.setShouldCache(false);
     Volley.newRequestQueue(ctx).add(request);
+  }
+
+  private ArrayList<DoctorInfo> parseJsonResponse(JSONArray jsonArray) throws JSONException {
+    ArrayList<DoctorInfo> items = new ArrayList<>();
+    for (int i = 0; i < jsonArray.length(); i++){
+      JSONObject obj = jsonArray.getJSONObject(i);
+      int id = obj.getInt("DocId");
+      String fullName = obj.getString("FullName");
+      String specialty = obj.getString("Specs");
+      String address = obj.getString("Address");
+      String about = obj.getString("About");
+      double rating = obj.getDouble("Stars");
+      String photo = obj.getString("Photo");
+      items.add(new DoctorInfo(id, fullName, specialty, address, about, (float) rating, photo));
+    }
+    return items;
   }
 
 

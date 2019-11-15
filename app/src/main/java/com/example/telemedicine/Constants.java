@@ -6,6 +6,8 @@ public class Constants {
   public static final   String DOCTOR_ADDRESS       = "com.example.telemedicine.Address";
   public static final   String DOCTOR_PHOTO_URL     = "com.example.telemedicine.PhotoUrl";
   public static final   String DOCTOR_RATING        = "com.example.telemedicine.Rating";
+  public static final   String DOCTOR_ABOUT         = "com.example.telemedicine.Rating.ABOUT";
+  public static final   String DOCTOR_BASE_64_PHOTO = "com.example.telemedicine.Rating.BASE_64_PHOTO";
   public static final   String MAP_VIEW_BUNDLE_KEY  = "MapViewBundleKey";
   public static final   String PATIENT_NAME         = "com.example.telemedicine.Name";
   public static final   String PATIENT_DISEASE      = "com.example.telemedicine.DISEASE";
