@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
   private EditText mPassword;
   private EditText mEmail;
   private HttpRequestManager mRequestManager;
-  private JSONObject mAuthResponse;
   private String mToken;
 
   @Override
@@ -80,14 +79,12 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         mRequestManager.setOnLoginSucceedListener(response -> {
-          mAuthResponse = new JSONObject();
-          mAuthResponse = response;
           mToken = getToken(response);
           shareToken();
           Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
           intent.putExtra(TOKEN_EXTRA_DATA, mToken);
           startActivity(intent);
-//          startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+          finish();
         });
         mRequestManager.setOnLoginFailedListener(error ->
           Toast.makeText(

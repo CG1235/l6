@@ -21,7 +21,6 @@ import com.example.telemedicine.Interfaces.OnLoginSucceedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFailedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFinishedListener;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,7 +84,7 @@ public class HttpRequestManager {
       @Override
       public Map<String, String> getHeaders() {
         Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/x-www-form-urlencoded");
+        headers.put(CONTENT_TYPE, CONTENT_TYPE_VALUE);
         return headers;
       }
     };
@@ -136,7 +135,7 @@ public class HttpRequestManager {
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/x-www-form-urlencoded");
+        headers.put(CONTENT_TYPE, CONTENT_TYPE_VALUE);
         headers.put("token", token);
         return headers;
       }
@@ -147,22 +146,6 @@ public class HttpRequestManager {
     request.setShouldCache(false);
     Volley.newRequestQueue(ctx).add(request);
   }
-
-//  private ArrayList<DoctorInfo> parseJsonResponse(JSONArray jsonArray) throws JSONException {
-//    ArrayList<DoctorInfo> items = new ArrayList<>();
-//    for (int i = 0; i < jsonArray.length(); i++){
-//      JSONObject obj = jsonArray.getJSONObject(i);
-//      int id = obj.getInt("DocId");
-//      String fullName = obj.getString("FullName");
-//      String specialty = obj.getString("Specs");
-//      String address = obj.getString("Address");
-//      String about = obj.getString("About");
-//      double rating = obj.getDouble("Stars");
-//      String photo = obj.getString("Photo");
-//      items.add(new DoctorInfo(id, fullName, specialty, address, about, (float) rating, photo));
-//    }
-//    return items;
-//  }
 
 
   public void setOnRegistrationFinishedListener(OnRegistrationFinishedListener listener){
