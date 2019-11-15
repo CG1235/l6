@@ -10,13 +10,12 @@ import com.android.volley.NetworkError;
 import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
-import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.telemedicine.Interfaces.OnDoctorListLoadedListener;
 import com.example.telemedicine.Interfaces.OnLoginFailedListener;
 import com.example.telemedicine.Interfaces.OnLoginSucceedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFailedListener;
@@ -27,7 +26,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.example.telemedicine.Constants.*;
@@ -38,6 +36,7 @@ public class HttpRequestManager {
   private OnRegistrationFailedListener onRegistrationFailedListener;
   private OnLoginSucceedListener onLoginSucceedListener;
   private OnLoginFailedListener onLoginFailedListener;
+  private OnDoctorListLoadedListener onDoctorListLoadedListener;
 
 
   public void registerUser(Context ctx, UserInfo userInfo) throws JSONException {
@@ -114,14 +113,30 @@ public class HttpRequestManager {
                   onLoginFailedListener.onLoginFailed(error);
                 }
             }){
-//      @Override
-//      protected Map<String, String> getParams() throws AuthFailureError {
-//        Map<String, String> params = new HashMap<>();
-//        params.put("Content-Type", "application/x-www-form-urlencoded");
-//        params.put(EMAIL, credentials.get(0));
-//        params.put(PASSWORD, credentials.get(1));
-//        return params;
-//      }
+    };
+    request.setRetryPolicy(new DefaultRetryPolicy(30000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    request.setShouldCache(false);
+    Volley.newRequestQueue(ctx).add(request);
+  }
+
+  public void getDoctorList(Context ctx, String token){
+    String url = API_URL + GET_DOCTOR_LIST_URL;
+    StringRequest request = new StringRequest(Request.Method.GET, url,
+            response -> {
+              if (onDoctorListLoadedListener != null){
+                onDoctorListLoadedListener.onDoctorListLoaded(response);
+              }
+            },
+            error -> {}){
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/x-www-form-urlencoded");
+        headers.put("token", token);
+        return super.getHeaders();
+      }
     };
     request.setRetryPolicy(new DefaultRetryPolicy(30000,
             DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -147,10 +162,15 @@ public class HttpRequestManager {
     this.onLoginFailedListener = listener;
   }
 
+  public void setOnDoctorListLoadedListener(OnDoctorListLoadedListener listener){
+    this.onDoctorListLoadedListener = listener;
+  }
+
   HttpRequestManager(){
-    onRegistrationFinishedListener = null;
-    onRegistrationFailedListener = null;
-    onLoginSucceedListener = null;
-    onLoginFailedListener = null;
+    onRegistrationFinishedListener  = null;
+    onRegistrationFailedListener    = null;
+    onLoginSucceedListener          = null;
+    onLoginFailedListener           = null;
+    onDoctorListLoadedListener      = null;
   }
 }

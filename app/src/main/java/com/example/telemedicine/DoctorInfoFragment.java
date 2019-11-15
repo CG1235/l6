@@ -90,7 +90,7 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   private void initMap(Bundle savedInstanceState, View view){
     Bundle mapViewBundle = null;
     if (savedInstanceState != null) {
-      mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
+      mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
     }
     mMapView = (MapView) view.findViewById(R.id.mapview);
     mMapView.onCreate(mapViewBundle);
@@ -103,10 +103,10 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   public void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
 
-    Bundle mapViewBundle = outState.getBundle(MAPVIEW_BUNDLE_KEY);
+    Bundle mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY);
     if (mapViewBundle == null) {
       mapViewBundle = new Bundle();
-      outState.putBundle(MAPVIEW_BUNDLE_KEY, mapViewBundle);
+      outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle);
     }
 
     mMapView.onSaveInstanceState(mapViewBundle);

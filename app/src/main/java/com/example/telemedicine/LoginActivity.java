@@ -3,12 +3,12 @@ package com.example.telemedicine;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,6 +19,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.example.telemedicine.Constants.REQUEST_CODE;
+import static com.example.telemedicine.Constants.TOKEN_EXTRA_DATA;
+import static com.example.telemedicine.Constants.TOKEN_KEY;
+import static com.example.telemedicine.Constants.TOKEN_SHARED_PREFS;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
   private EditText mEmail;
   private HttpRequestManager mRequestManager;
   private JSONObject mAuthResponse;
+  private String mToken;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +82,12 @@ public class LoginActivity extends AppCompatActivity {
         mRequestManager.setOnLoginSucceedListener(response -> {
           mAuthResponse = new JSONObject();
           mAuthResponse = response;
-          startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+          mToken = getToken(response);
+          shareToken();
+          Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+          intent.putExtra(TOKEN_EXTRA_DATA, mToken);
+          startActivity(intent);
+//          startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         });
         mRequestManager.setOnLoginFailedListener(error ->
           Toast.makeText(
@@ -91,5 +100,22 @@ public class LoginActivity extends AppCompatActivity {
                 .show();
       }
     });
+  }
+
+  private void shareToken() {
+    SharedPreferences sp = getSharedPreferences(TOKEN_SHARED_PREFS, MODE_PRIVATE);
+    SharedPreferences.Editor editor = sp.edit();
+    editor.putString(TOKEN_KEY, mToken);
+    editor.apply();
+  }
+
+  private String getToken(JSONObject response) {
+    String token = new String();
+    try {
+      token = response.getString("Message");
+    } catch (JSONException e) {
+      e.printStackTrace();
+    }
+    return token;
   }
 }

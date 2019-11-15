@@ -3,6 +3,7 @@ package com.example.telemedicine;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -15,11 +16,14 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import static com.example.telemedicine.Constants.*;
+
 public class HomeActivity extends AppCompatActivity{
 
   private BottomNavigationView mNavigationView;
   private FloatingActionButton mAddReqFab;
   private Menu mMenu;
+  private String mAuthToken;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class HomeActivity extends AppCompatActivity{
 
     disableMenuItems();
     openHomeFragment();
+    getTokenFromIntent();
 
     mAddReqFab = findViewById(R.id.add_req_fab);
     Drawable fabTint = getResources().getDrawable(R.drawable.ic_add_black_24dp);
@@ -78,6 +83,11 @@ public class HomeActivity extends AppCompatActivity{
               );
     }
     );
+  }
+
+  private void getTokenFromIntent() {
+    Intent i = getIntent();
+    mAuthToken = i.getStringExtra(TOKEN_EXTRA_DATA);
   }
 
   private void disableMenuItems() {
