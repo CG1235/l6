@@ -131,7 +131,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/short_descr_tv"
+                android:id="@+id/doctor_info_about_tv"
                 android:layout_width="@dimen/cv_w"
                 android:layout_height="wrap_content"
                 android:maxLines="4"

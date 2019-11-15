@@ -45,6 +45,7 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   private ImageView mBackArrow;
   private String mAbout;
   private Bitmap mPhotoBitmap;
+  private TextView mAboutTv;
 
   @Nullable
   @Override
@@ -64,6 +65,7 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     mRatingNumberTv = view.findViewById(R.id.doctor_info_rating_number);
     mPhoto = view.findViewById(R.id.doctor_info_photo);
     mRatingBar = view.findViewById(R.id.doctor_info_rating_bar);
+    mAboutTv = view.findViewById(R.id.doctor_info_about_tv);
 
     initializeData();
     setData();
@@ -97,6 +99,7 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     mPhoto.setImageBitmap(mPhotoBitmap);
     mNameTv.setText(mDoctorName);
     mSpecialtyTv.setText(mDoctorSpecialty);
+    mAboutTv.setText(mAbout);
     mAddressTv.setText(mDoctorAddress);
     mRatingBar.setRating(mDoctorRating);
     mRatingNumberTv.setText(String.valueOf(mDoctorRating));

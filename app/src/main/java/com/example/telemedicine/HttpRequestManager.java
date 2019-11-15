@@ -126,15 +126,8 @@ public class HttpRequestManager {
     String url = API_URL + GET_DOCTOR_LIST_URL;
     StringRequest request = new StringRequest(Request.Method.GET, url,
             response -> {
-              ArrayList<DoctorInfo> doctors = new ArrayList<>();
-              try {
-                JSONArray jsonArray = new JSONArray(response);
-                doctors = parseJsonResponse(jsonArray);
-              } catch (JSONException e) {
-                e.printStackTrace();
-              }
               if (onDoctorListLoadedListener != null){
-                onDoctorListLoadedListener.onDoctorListLoaded(doctors);
+                onDoctorListLoadedListener.onDoctorListLoaded(response);
               }
             },
             error -> {
@@ -155,21 +148,21 @@ public class HttpRequestManager {
     Volley.newRequestQueue(ctx).add(request);
   }
 
-  private ArrayList<DoctorInfo> parseJsonResponse(JSONArray jsonArray) throws JSONException {
-    ArrayList<DoctorInfo> items = new ArrayList<>();
-    for (int i = 0; i < jsonArray.length(); i++){
-      JSONObject obj = jsonArray.getJSONObject(i);
-      int id = obj.getInt("DocId");
-      String fullName = obj.getString("FullName");
-      String specialty = obj.getString("Specs");
-      String address = obj.getString("Address");
-      String about = obj.getString("About");
-      double rating = obj.getDouble("Stars");
-      String photo = obj.getString("Photo");
-      items.add(new DoctorInfo(id, fullName, specialty, address, about, (float) rating, photo));
-    }
-    return items;
-  }
+//  private ArrayList<DoctorInfo> parseJsonResponse(JSONArray jsonArray) throws JSONException {
+//    ArrayList<DoctorInfo> items = new ArrayList<>();
+//    for (int i = 0; i < jsonArray.length(); i++){
+//      JSONObject obj = jsonArray.getJSONObject(i);
+//      int id = obj.getInt("DocId");
+//      String fullName = obj.getString("FullName");
+//      String specialty = obj.getString("Specs");
+//      String address = obj.getString("Address");
+//      String about = obj.getString("About");
+//      double rating = obj.getDouble("Stars");
+//      String photo = obj.getString("Photo");
+//      items.add(new DoctorInfo(id, fullName, specialty, address, about, (float) rating, photo));
+//    }
+//    return items;
+//  }
 
 
   public void setOnRegistrationFinishedListener(OnRegistrationFinishedListener listener){
