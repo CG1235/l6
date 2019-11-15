@@ -15,7 +15,9 @@ import com.android.volley.TimeoutError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.telemedicine.Interfaces.OnDoctorGetListener;
 import com.example.telemedicine.Interfaces.OnDoctorListLoadedListener;
+import com.example.telemedicine.Interfaces.OnGetDoctorFailureListener;
 import com.example.telemedicine.Interfaces.OnLoginFailedListener;
 import com.example.telemedicine.Interfaces.OnLoginSucceedListener;
 import com.example.telemedicine.Interfaces.OnRegistrationFailedListener;
@@ -37,7 +39,8 @@ public class HttpRequestManager {
   private OnLoginSucceedListener onLoginSucceedListener;
   private OnLoginFailedListener onLoginFailedListener;
   private OnDoctorListLoadedListener onDoctorListLoadedListener;
-
+  private OnDoctorGetListener onDoctorGetListener;
+  private OnGetDoctorFailureListener onGetDoctorFailureListener;
 
   public void registerUser(Context ctx, UserInfo userInfo) throws JSONException {
     String regUrl = API_URL + REG_URL;
@@ -130,8 +133,37 @@ public class HttpRequestManager {
               }
             },
             error -> {
+              Toast.makeText(ctx, error.getMessage(), Toast.LENGTH_LONG).show();
               System.out.println("Error" + error.getMessage());
             }){
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        Map<String, String> headers = new HashMap<>();
+        headers.put(CONTENT_TYPE, CONTENT_TYPE_VALUE);
+        headers.put("token", token);
+        return headers;
+      }
+    };
+    request.setRetryPolicy(new DefaultRetryPolicy(30000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    request.setShouldCache(false);
+    Volley.newRequestQueue(ctx).add(request);
+  }
+
+  public void getDoctorById(Context ctx, int id, String token){
+    String url = API_URL + GET_DOCTOR_URL + id;
+    StringRequest request = new StringRequest(Request.Method.GET, url,
+            response -> {
+              if (onDoctorGetListener != null){
+                onDoctorGetListener.onDoctorGet(response);
+              }
+            },
+            error -> {
+              Toast.makeText(ctx, error.getMessage(), Toast.LENGTH_LONG).show();
+              if (onGetDoctorFailureListener != null)
+                onGetDoctorFailureListener.onGetDoctorFailure(error); }
+    ){
       @Override
       public Map<String, String> getHeaders() throws AuthFailureError {
         Map<String, String> headers = new HashMap<>();
@@ -168,11 +200,21 @@ public class HttpRequestManager {
     this.onDoctorListLoadedListener = listener;
   }
 
+  public void setOnDoctorGetListener(OnDoctorGetListener listener){
+    this.onDoctorGetListener = listener;
+  }
+
+  public void setOnGetDoctorFailureListener(OnGetDoctorFailureListener listener){
+    this.onGetDoctorFailureListener = listener;
+  }
+
   HttpRequestManager(){
     onRegistrationFinishedListener  = null;
     onRegistrationFailedListener    = null;
     onLoginSucceedListener          = null;
     onLoginFailedListener           = null;
     onDoctorListLoadedListener      = null;
+    onDoctorGetListener             = null;
+    onGetDoctorFailureListener      = null;
   }
 }

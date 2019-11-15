@@ -2,7 +2,6 @@ package com.example.telemedicine;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -59,12 +58,12 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
 
     mBackArrow = view.findViewById(R.id.info_back_arrow_image_view);
 
-    mNameTv = view.findViewById(R.id.doctor_info_name);
-    mSpecialtyTv = view.findViewById(R.id.doctor_info_specialty);
+    mNameTv = view.findViewById(R.id.Ndoctor_info_name);
+    mSpecialtyTv = view.findViewById(R.id.Ndoctor_info_specialty);
     mAddressTv = view.findViewById(R.id.doctor_info_location_street);
-    mRatingNumberTv = view.findViewById(R.id.doctor_info_rating_number);
-    mPhoto = view.findViewById(R.id.doctor_info_photo);
-    mRatingBar = view.findViewById(R.id.doctor_info_rating_bar);
+    mRatingNumberTv = view.findViewById(R.id.Ndoctor_info_rating_number);
+    mPhoto = view.findViewById(R.id.Ndoctor_info_photo);
+    mRatingBar = view.findViewById(R.id.Ndoctor_info_rating_bar);
     mAboutTv = view.findViewById(R.id.doctor_info_about_tv);
 
     initializeData();

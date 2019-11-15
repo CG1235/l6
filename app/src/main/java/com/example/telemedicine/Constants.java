@@ -1,7 +1,7 @@
 package com.example.telemedicine;
 
 public class Constants {
-  public static final   String DOCTOR_NAME          = "com.example.telemedicine.Name";
+  public static final   String DOCTOR_NAME          = "com.example.telemedicine.Doctor_Name";
   public static final   String DOCTOR_SPECIALTY     = "com.example.telemedicine.Specialty";
   public static final   String DOCTOR_ADDRESS       = "com.example.telemedicine.Address";
   public static final   String DOCTOR_PHOTO_URL     = "com.example.telemedicine.PhotoUrl";
@@ -20,6 +20,7 @@ public class Constants {
   public static final   String API_URL              = "http://81.180.72.17/";
   public static final   String REG_URL              = "api/Register/UserReg";
   public static final   String AUTH_URL             = "api/Login/UserAuth";
+  public static final   String GET_DOCTOR_URL       = "api/Doctor/GetDoctor/";
   public static final   String GET_DOCTOR_LIST_URL  = "api/Doctor/GetDoctorList";
   public static final   String CONTENT_TYPE         = "Content-Type";
   public static final   String CONTENT_TYPE_VALUE   = "application/x-www-form-urlencoded";

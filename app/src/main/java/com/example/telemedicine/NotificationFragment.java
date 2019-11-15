@@ -2,7 +2,10 @@ package com.example.telemedicine;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.telemedicine.Interfaces.OnViewCreatedListener;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
+import java.io.ByteArrayOutputStream;
 
 import static com.example.telemedicine.Constants.*;
 
@@ -32,6 +33,8 @@ public class NotificationFragment extends Fragment {
   private TextView mDisease;
   private TextView mLocation;
   private TextView mDescription;
+  private TextView mDoctorSpecialtyTv;
+  private TextView mDoctorName;
 
   @Nullable
   @Override
@@ -50,27 +53,30 @@ public class NotificationFragment extends Fragment {
     mLocation = view.findViewById(R.id.user_location);
     mDescription = view.findViewById(R.id.user_description);
 
+    mDoctorName = view.findViewById(R.id.notif_doctor_info_name);
+    mDoctorSpecialtyTv = view.findViewById(R.id.notif_doctor_info_specialty);
+    mRatingBar = view.findViewById(R.id.notif_doctor_info_rating_bar);
+    mIndicator = view.findViewById(R.id.notif_doctor_info_rating_number);
+    mDoctorPhoto = view.findViewById(R.id.notif_doctor_info_photo);
+
     fillTextViews();
 
-    mRatingBar = view.findViewById(R.id.doctor_info_rating_bar);
-    mIndicator = view.findViewById(R.id.doctor_info_rating_number);
-    mDoctorPhoto = view.findViewById(R.id.doctor_info_photo);
-    mRatingBar.setRating((float) 3.5);
-    mIndicator.setText(String.valueOf(mRatingBar.getRating()));
-    Picasso.get()
-            .load("https://i.imgur.com/DvpvklR.png")
-            .noFade()
-            .into(mDoctorPhoto, new Callback() {
-              @Override
-              public void onSuccess() {
-                System.out.println("++++++++++++++++++Success+++++++++++++++++++++++");
-              }
-
-              @Override
-              public void onError(Exception e) {
-                System.out.println("==============================" + e.getMessage() + "    Error====================");
-              }
-            });
+//    mRatingBar.setRating((float) 3.5);
+//    mIndicator.setText(String.valueOf(mRatingBar.getRating()));
+//    Picasso.get()
+//            .load("https://i.imgur.com/DvpvklR.png")
+//            .noFade()
+//            .into(mDoctorPhoto, new Callback() {
+//              @Override
+//              public void onSuccess() {
+//                System.out.println("++++++++++++++++++Success+++++++++++++++++++++++");
+//              }
+//
+//              @Override
+//              public void onError(Exception e) {
+//                System.out.println("==============================" + e.getMessage() + "    Error====================");
+//              }
+//            });
   }
 
   private void fillTextViews() {
@@ -80,11 +86,27 @@ public class NotificationFragment extends Fragment {
     String disease = sp.getString(PATIENT_DISEASE, "");
     String location = sp.getString(PATIENT_LOCATION, "");
     String description = sp.getString(PATIENT_DESCRIPTION, "");
+    String doctorName = sp.getString(DOCTOR_NAME, "");
+    String doctorSpecialty = sp.getString(DOCTOR_SPECIALTY, "");
+    float doctorRating = sp.getFloat(DOCTOR_RATING, 1);
+    String base64photo = sp.getString(DOCTOR_BASE_64_PHOTO, "");
 
     mName.setText(name);
     mDisease.setText(disease);
     mLocation.setText(location);
     mDescription.setText(description);
+    mDoctorName.setText(doctorName);
+    mDoctorSpecialtyTv.setText(doctorSpecialty);
+    mRatingBar.setRating(doctorRating);
+    mIndicator.setText(String.valueOf(mRatingBar.getRating()));
+
+    if (!base64photo.equals("")){
+      ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+      byte[] byteArray = outputStream.toByteArray();
+      byteArray = Base64.decode(base64photo, Base64.DEFAULT);
+      Bitmap image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+      mDoctorPhoto.setImageBitmap(image);
+    }
   }
 
   public void setOnViewCreatedListener(OnViewCreatedListener listener){

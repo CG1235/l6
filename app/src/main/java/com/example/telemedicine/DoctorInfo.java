@@ -1,5 +1,7 @@
 package com.example.telemedicine;
 
+import android.os.Parcelable;
+
 import org.jetbrains.annotations.Contract;
 
 import lombok.Getter;
