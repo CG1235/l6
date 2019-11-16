@@ -22,6 +22,7 @@ public class Constants {
   public static final   String AUTH_URL             = "api/Login/UserAuth";
   public static final   String GET_DOCTOR_URL       = "api/Doctor/GetDoctor/";
   public static final   String GET_DOCTOR_LIST_URL  = "api/Doctor/GetDoctorList";
+  public static final   String ADD_CONS_URL         = "api/Doctor/AddConsultation";
   public static final   String CONTENT_TYPE         = "Content-Type";
   public static final   String CONTENT_TYPE_VALUE   = "application/x-www-form-urlencoded";
   public static final   String FULL_NAME            = "FullName";

@@ -15,6 +15,8 @@ import com.android.volley.TimeoutError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.telemedicine.Interfaces.OnConsultationAddedListener;
+import com.example.telemedicine.Interfaces.OnConsultationFailureListener;
 import com.example.telemedicine.Interfaces.OnDoctorGetListener;
 import com.example.telemedicine.Interfaces.OnDoctorListLoadedListener;
 import com.example.telemedicine.Interfaces.OnGetDoctorFailureListener;
@@ -41,8 +43,10 @@ public class HttpRequestManager {
   private OnDoctorListLoadedListener onDoctorListLoadedListener;
   private OnDoctorGetListener onDoctorGetListener;
   private OnGetDoctorFailureListener onGetDoctorFailureListener;
+  private OnConsultationAddedListener onConsultationAddedListener;
+  private OnConsultationFailureListener onConsultationFailureListener;
 
-  public void registerUser(Context ctx, UserInfo userInfo) throws JSONException {
+  public synchronized void registerUser(Context ctx, UserInfo userInfo) throws JSONException {
     String regUrl = API_URL + REG_URL;
 
     StringRequest request = new StringRequest(Request.Method.POST, regUrl, response -> {
@@ -98,7 +102,7 @@ public class HttpRequestManager {
     Volley.newRequestQueue(ctx).add(request);
   }
 
-  public void authUser(Context ctx, ArrayList<String> credentials) throws JSONException {
+  public synchronized void authUser(Context ctx, ArrayList<String> credentials) throws JSONException {
     String authUrl = API_URL + AUTH_URL;
 
     JSONObject req = new JSONObject();
@@ -124,7 +128,7 @@ public class HttpRequestManager {
     Volley.newRequestQueue(ctx).add(request);
   }
 
-  public void getDoctorList(Context ctx, String token){
+  public synchronized void getDoctorList(Context ctx, String token){
     String url = API_URL + GET_DOCTOR_LIST_URL;
     StringRequest request = new StringRequest(Request.Method.GET, url,
             response -> {
@@ -151,7 +155,7 @@ public class HttpRequestManager {
     Volley.newRequestQueue(ctx).add(request);
   }
 
-  public void getDoctorById(Context ctx, int id, String token){
+  public synchronized void getDoctorById(Context ctx, int id, String token){
     String url = API_URL + GET_DOCTOR_URL + id;
     StringRequest request = new StringRequest(Request.Method.GET, url,
             response -> {
@@ -170,6 +174,45 @@ public class HttpRequestManager {
         headers.put(CONTENT_TYPE, CONTENT_TYPE_VALUE);
         headers.put("token", token);
         return headers;
+      }
+    };
+    request.setRetryPolicy(new DefaultRetryPolicy(30000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    request.setShouldCache(false);
+    Volley.newRequestQueue(ctx).add(request);
+  }
+
+  public synchronized void addCons(Context ctx, ConsultationInfo info, String token){
+    String url = API_URL + ADD_CONS_URL;
+    StringRequest request = new StringRequest(Request.Method.POST, url,
+            response -> {
+              if (onConsultationAddedListener != null)
+                onConsultationAddedListener.onConsultationAdded(response);
+            },
+            error -> {
+              if (onConsultationFailureListener != null)
+                onConsultationFailureListener.onConsultationFailure(error);
+            }){
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        Map<String, String> headers = new HashMap<>();
+        headers.put(CONTENT_TYPE, CONTENT_TYPE_VALUE);
+        headers.put("token", token);
+        return headers;
+      }
+
+      @Override
+      protected Map<String, String> getParams() throws AuthFailureError {
+        Map<String, String> params = new HashMap<>();
+        params.put("ConsId", String.valueOf(info.getMConsId()));
+        params.put("Name", info.getMName());
+        params.put("Disease", info.getMDisease());
+        params.put("Address", info.getMAddress());
+        params.put("Description", info.getMDescription());
+        params.put("DocId", String.valueOf(info.getMDocId()));
+        params.put("IsConfirmed", info.getMIsConfirmed());
+        return params;
       }
     };
     request.setRetryPolicy(new DefaultRetryPolicy(30000,
@@ -208,6 +251,14 @@ public class HttpRequestManager {
     this.onGetDoctorFailureListener = listener;
   }
 
+  public void setOnConsultationAddedListener(OnConsultationAddedListener listener){
+    this.onConsultationAddedListener = listener;
+  }
+
+  public void setOnConsultationFailureListener(OnConsultationFailureListener listener){
+    this.onConsultationFailureListener = listener;
+  }
+
   HttpRequestManager(){
     onRegistrationFinishedListener  = null;
     onRegistrationFailedListener    = null;
@@ -216,5 +267,7 @@ public class HttpRequestManager {
     onDoctorListLoadedListener      = null;
     onDoctorGetListener             = null;
     onGetDoctorFailureListener      = null;
+    onConsultationAddedListener     = null;
+    onConsultationFailureListener   = null;
   }
 }

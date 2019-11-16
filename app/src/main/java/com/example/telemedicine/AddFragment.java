@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,9 @@ import com.example.telemedicine.Interfaces.OnRequestClickedListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 import static com.example.telemedicine.Constants.*;
 
@@ -57,18 +61,49 @@ public class AddFragment extends Fragment {
     mRequset = view.findViewById(R.id.add_fragment_request_button);
 
     mRequset.setOnClickListener(view1 -> {
-      mRequestManager.getDoctorById(getActivity(), 5, mToken);
+
+      String dis = mDescriptionEdTxt.getText().toString();
+      dis.replaceAll("\\s+", "");
+      ConsultationInfo info = new ConsultationInfo(1, mNameEdTxt.getText().toString(),
+              dis + " " + genKeyWord(),
+              mLocationEdTxt.getText().toString(), mDescriptionEdTxt.getText().toString(),
+              5, "false");
+      mRequestManager.addCons(getActivity(), info, mToken);
+      mRequestManager.setOnConsultationAddedListener(response -> {
+        new ConsResponseParser().execute(response);
+        System.out.println("RESPONSE = " + response);
+      });
+      mRequestManager.setOnConsultationFailureListener(error -> {
+        Log.d("ERROR", error.getMessage());
+      });
+    });
+  }
+
+  class ConsResponseParser extends AsyncTask<String, Void, Integer>{
+    @Override
+    protected Integer doInBackground(String... strings) {
+      String response = strings[0];
+      int docId = 0;
+      try {
+        JSONObject obj = new JSONObject(response);
+        docId = obj.getInt("DocId");
+      } catch (JSONException e) {
+        e.printStackTrace();
+      }
+      return docId;
+    }
+
+    @Override
+    protected void onPostExecute(Integer id) {
+      super.onPostExecute(id);
+      mRequestManager.getDoctorById(getActivity(), id, mToken);
       mRequestManager.setOnDoctorGetListener(response -> {
         new DoctorInfoParser().execute(response);
       });
       mRequestManager.setOnGetDoctorFailureListener(error -> {
         Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
       });
-    });
-  }
-
-  void setOnRequestClickedListener(OnRequestClickedListener listener){
-    this.onRequestClickedListener = listener;
+    }
   }
 
   class DoctorInfoParser extends AsyncTask<String, Void, DoctorInfo>{
@@ -119,6 +154,27 @@ public class AddFragment extends Fragment {
       if (onRequestClickedListener != null)
         onRequestClickedListener.onRequest();
     }
+  }
+
+  private String genKeyWord(){
+    ArrayList<String> keyWords = new ArrayList<String>() {{
+      add("ochi"); add("ochiul"); add("ochelari"); add("ochii"); add("vederea");
+      add("baiatul"); add("fetita"); add("picior"); add("mina"); add("interventie");
+      add("chirurgical"); add("fractura"); add("fracturat"); add("dislocat"); add("picior");
+    }};
+    Random r = new Random();
+    int low = 0;
+    int high = keyWords.size();
+    int index = r.nextInt(high - low) + low;
+
+    if (index >= keyWords.size())
+      --index;
+
+    return keyWords.get(index);
+  }
+
+  void setOnRequestClickedListener(OnRequestClickedListener listener){
+    this.onRequestClickedListener = listener;
   }
 }
 
