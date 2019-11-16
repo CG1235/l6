@@ -81,7 +81,6 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     mDoctorName = getArguments().getString(DOCTOR_NAME);
     mDoctorSpecialty = getArguments().getString(DOCTOR_SPECIALTY);
     mDoctorAddress = getArguments().getString(DOCTOR_ADDRESS);
-    mPhotoUrl = getArguments().getInt(DOCTOR_PHOTO_URL);
     mDoctorRating = getArguments().getFloat(DOCTOR_RATING);
     mAbout = getArguments().getString(DOCTOR_ABOUT);
     String base64photo = getArguments().getString(DOCTOR_BASE_64_PHOTO);
@@ -93,8 +92,6 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
   }
 
   private void setData() {
-//    Drawable image = getResources().getDrawable(mPhotoUrl);
-//    mPhoto.setImageDrawable(image);
     mPhoto.setImageBitmap(mPhotoBitmap);
     mNameTv.setText(mDoctorName);
     mSpecialtyTv.setText(mDoctorSpecialty);

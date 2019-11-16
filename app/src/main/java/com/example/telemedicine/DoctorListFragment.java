@@ -49,15 +49,10 @@ public class DoctorListFragment extends Fragment {
     mRecyclerView = view.findViewById(R.id.doctor_list);
     mLayoutManager = new LinearLayoutManager(view.getContext());
     mRecyclerView.setLayoutManager(mLayoutManager);
-//    DataManager.getInstance().createDoctorInfos();
-//    mDoctorInfoList = DataManager.getInstance().getMDoctorInfo();
-//    mAdapter = new RecyclerAdapter(getActivity(), mDoctorInfoList);
-//    mRecyclerView.setAdapter(mAdapter);
-
 
     SharedPreferences sp = getActivity().getSharedPreferences(TOKEN_SHARED_PREFS, Context.MODE_PRIVATE);
     mToken = sp.getString(TOKEN_KEY, "");
-    Toast.makeText(getActivity(), mToken, Toast.LENGTH_LONG).show();
+//    Toast.makeText(getActivity(), mToken, Toast.LENGTH_LONG).show();
     performGetDoctorListRequest();
   }
 
@@ -86,7 +81,6 @@ public class DoctorListFragment extends Fragment {
     @Override
     protected Void doInBackground(String... strings) {
       String response = strings[0];
-      ArrayList<DoctorInfo> items = new ArrayList<>();
       if (!response.equals("") && response!= null){
         try {
           JSONArray jsonArray = new JSONArray(response);

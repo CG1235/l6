@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.telemedicine.Interfaces.OnViewCreatedListener;
@@ -35,6 +36,8 @@ public class NotificationFragment extends Fragment {
   private TextView mDescription;
   private TextView mDoctorSpecialtyTv;
   private TextView mDoctorName;
+  private CardView mDoctorInfoCv;
+  private Bundle mArgs;
 
   @Nullable
   @Override
@@ -52,6 +55,7 @@ public class NotificationFragment extends Fragment {
     mDisease = view.findViewById(R.id.user_disease);
     mLocation = view.findViewById(R.id.user_location);
     mDescription = view.findViewById(R.id.user_description);
+    mDoctorInfoCv = view.findViewById(R.id.notif_card_view);
 
     mDoctorName = view.findViewById(R.id.notif_doctor_info_name);
     mDoctorSpecialtyTv = view.findViewById(R.id.notif_doctor_info_specialty);
@@ -61,22 +65,15 @@ public class NotificationFragment extends Fragment {
 
     fillTextViews();
 
-//    mRatingBar.setRating((float) 3.5);
-//    mIndicator.setText(String.valueOf(mRatingBar.getRating()));
-//    Picasso.get()
-//            .load("https://i.imgur.com/DvpvklR.png")
-//            .noFade()
-//            .into(mDoctorPhoto, new Callback() {
-//              @Override
-//              public void onSuccess() {
-//                System.out.println("++++++++++++++++++Success+++++++++++++++++++++++");
-//              }
-//
-//              @Override
-//              public void onError(Exception e) {
-//                System.out.println("==============================" + e.getMessage() + "    Error====================");
-//              }
-//            });
+    mDoctorInfoCv.setOnClickListener(view1 -> {
+      DoctorInfoFragment fragment = new DoctorInfoFragment();
+      fragment.setArguments(mArgs);
+
+      getActivity().getSupportFragmentManager().beginTransaction()
+              .replace(R.id.fragment_container, fragment)
+              .addToBackStack(null)
+              .commit();
+    });
   }
 
   private void fillTextViews() {
@@ -88,8 +85,13 @@ public class NotificationFragment extends Fragment {
     String description = sp.getString(PATIENT_DESCRIPTION, "");
     String doctorName = sp.getString(DOCTOR_NAME, "");
     String doctorSpecialty = sp.getString(DOCTOR_SPECIALTY, "");
+    String doctorAddress = sp.getString(DOCTOR_ADDRESS, "");
+    String doctorAbout = sp.getString(DOCTOR_ABOUT, "");
     float doctorRating = sp.getFloat(DOCTOR_RATING, 1);
     String base64photo = sp.getString(DOCTOR_BASE_64_PHOTO, "");
+
+    setArgs(doctorName, doctorSpecialty, doctorAddress, doctorAbout,
+            doctorRating, base64photo);
 
     mName.setText(name);
     mDisease.setText(disease);
@@ -107,6 +109,17 @@ public class NotificationFragment extends Fragment {
       Bitmap image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
       mDoctorPhoto.setImageBitmap(image);
     }
+  }
+
+  private void setArgs(String doctorName, String doctorSpecialty, String doctorAddress,
+                       String doctorAbout, float doctorRating, String base64photo) {
+    mArgs = new Bundle();
+      mArgs.putString(DOCTOR_NAME, doctorName);
+      mArgs.putString(DOCTOR_SPECIALTY,doctorSpecialty );
+      mArgs.putString(DOCTOR_ADDRESS, doctorAddress );
+      mArgs.putFloat(DOCTOR_RATING, doctorRating);
+      mArgs.putString(DOCTOR_ABOUT, doctorAbout);
+      mArgs.putString(DOCTOR_BASE_64_PHOTO, base64photo);
   }
 
   public void setOnViewCreatedListener(OnViewCreatedListener listener){

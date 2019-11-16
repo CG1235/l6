@@ -181,6 +181,8 @@ public class AddFragment extends Fragment {
       editor.putString(DOCTOR_SPECIALTY, doctorInfo.getMSpecialty());
       editor.putString(DOCTOR_BASE_64_PHOTO, doctorInfo.getMPhoto());
       editor.putFloat(DOCTOR_RATING, doctorInfo.getMRating());
+      editor.putString(DOCTOR_ADDRESS, doctorInfo.getMAddress());
+      editor.putString(DOCTOR_ABOUT, doctorInfo.getMAbout());
       editor.apply();
 
       if (onRequestClickedListener != null)

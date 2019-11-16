@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view"
+                android:id="@+id/notif_card_view"
                 android:layout_width="@dimen/cv_w"
                 android:layout_height="@dimen/cv_h"
                 android:layout_marginTop="@dimen/d_info_cv_margin_top"
@@ -127,7 +127,7 @@
                 android:text="@string/short_description"
                 android:textColor="@color/DarkColor"
                 android:textSize="@dimen/d_info_big_text_size"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="@id/notif_card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -141,7 +141,7 @@
                 android:text="@string/bs_1"
                 android:textColor="@color/hintColor"
                 android:textSize="@dimen/d_info_small_text_size"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="@id/notif_card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -153,7 +153,7 @@
                 android:text="@string/location"
                 android:textColor="@color/DarkColor"
                 android:textSize="@dimen/d_info_big_text_size"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="@id/notif_card_view"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
@@ -161,7 +161,7 @@
                 android:layout_width="@dimen/d_info_loc_icon_w"
                 android:layout_height="@dimen/d_info_loc_icon_h"
                 android:layout_marginTop="@dimen/d_info_loc_icon_margin_top"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="@id/notif_card_view"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_location_icon" />
 
@@ -183,7 +183,7 @@
                 android:layout_width="@dimen/cv_w"
                 android:layout_height="@dimen/map_h"
                 android:layout_marginTop="@dimen/map_margin_top"
-                app:layout_constraintStart_toStartOf="@id/card_view"
+                app:layout_constraintStart_toStartOf="@id/notif_card_view"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.gms.maps.MapView

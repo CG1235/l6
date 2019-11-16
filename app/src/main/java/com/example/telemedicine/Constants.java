@@ -2,8 +2,8 @@ package com.example.telemedicine;
 
 public class Constants {
   public static final   String DOCTOR_NAME          = "com.example.telemedicine.Doctor_Name";
-  public static final   String DOCTOR_SPECIALTY     = "com.example.telemedicine.Specialty";
-  public static final   String DOCTOR_ADDRESS       = "com.example.telemedicine.Address";
+  public static final   String DOCTOR_SPECIALTY     = "com.example.telemedicine.Doctor_Specialty";
+  public static final   String DOCTOR_ADDRESS       = "com.example.telemedicine.Doctor_Address";
   public static final   String DOCTOR_PHOTO_URL     = "com.example.telemedicine.PhotoUrl";
   public static final   String DOCTOR_RATING        = "com.example.telemedicine.Rating";
   public static final   String DOCTOR_ABOUT         = "com.example.telemedicine.Rating.ABOUT";

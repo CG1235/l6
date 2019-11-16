@@ -212,7 +212,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/user_description" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view"
+                android:id="@+id/notif_card_view"
                 android:layout_width="@dimen/cv_w"
                 android:layout_height="@dimen/cv_h"
                 android:layout_marginTop="@dimen/cv_margin_top"
@@ -307,7 +307,7 @@
                 android:textSize="@dimen/label_field_txt_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_view" />
+                app:layout_constraintTop_toBottomOf="@+id/notif_card_view" />
 
             <Button
                 android:id="@+id/cancel_button"
