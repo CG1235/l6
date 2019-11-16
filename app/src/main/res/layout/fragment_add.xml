@@ -173,7 +173,7 @@
                 android:layout_height="@dimen/next_button_height"
                 android:layout_marginTop="@dimen/next_button_margin_top"
                 android:layout_marginBottom="@dimen/request_margin_bottom"
-                android:background="@drawable/shape_green"
+                android:background="@drawable/button_state_style"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:text="@string/request"
                 android:textAllCaps="false"

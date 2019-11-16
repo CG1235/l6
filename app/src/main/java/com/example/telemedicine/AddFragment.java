@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,29 +54,59 @@ public class AddFragment extends Fragment {
     mDiseaseEdTxt = view.findViewById(R.id.disease_input);
     mLocationEdTxt = view.findViewById(R.id.location_input);
     mDescriptionEdTxt = view.findViewById(R.id.description_input);
+    mRequset = view.findViewById(R.id.add_fragment_request_button);
+    mRequset.setEnabled(false);
 
     mRequestManager = new HttpRequestManager();
     SharedPreferences tokenSp = getActivity().getSharedPreferences(TOKEN_SHARED_PREFS, Context.MODE_PRIVATE);
     mToken = tokenSp.getString(TOKEN_KEY, "");
 
+    TextWatcher watcher = new TextWatcher() {
+      @Override
+      public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
-    mRequset = view.findViewById(R.id.add_fragment_request_button);
+      @Override
+      public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        String name = mNameEdTxt.getText().toString().trim();
+        String disease = mDiseaseEdTxt.getText().toString().trim();
+        String address = mLocationEdTxt.getText().toString().trim();
+        String description = mDescriptionEdTxt.getText().toString().trim();
+        mRequset.setEnabled(!name.isEmpty() && !disease.isEmpty() &&
+                !address.isEmpty() && !description.isEmpty());
+      }
+
+      @Override
+      public void afterTextChanged(Editable editable) {}
+    };
+
+    mNameEdTxt.addTextChangedListener(watcher);
+    mDiseaseEdTxt.addTextChangedListener(watcher);
+    mLocationEdTxt.addTextChangedListener(watcher);
+    mDescriptionEdTxt.addTextChangedListener(watcher);
 
     mRequset.setOnClickListener(view1 -> {
 
-      String dis = mDescriptionEdTxt.getText().toString();
-      dis.replaceAll("\\s+", "");
-      ConsultationInfo info = new ConsultationInfo(1, mNameEdTxt.getText().toString(),
-              dis + " " + genKeyWord(),
-              mLocationEdTxt.getText().toString(), mDescriptionEdTxt.getText().toString(),
-              5, "false");
-      mRequestManager.addCons(getActivity(), info, mToken);
-      mRequestManager.setOnConsultationAddedListener(response -> {
-        new ConsResponseParser().execute(response);
-        System.out.println("RESPONSE = " + response);
+      RequestDialog confirmDialog = new RequestDialog();
+      confirmDialog.show(getActivity().getSupportFragmentManager(), "Dialog");
+
+      confirmDialog.setOnConfirmClickedListener(() -> {
+        String dis = mDescriptionEdTxt.getText().toString();
+        dis.replaceAll("\\s+", "");
+        ConsultationInfo info = new ConsultationInfo(1, mNameEdTxt.getText().toString(),
+                dis + " " + genKeyWord(),
+                mLocationEdTxt.getText().toString(), mDescriptionEdTxt.getText().toString(),
+                5, "false");
+        mRequestManager.addCons(getActivity(), info, mToken);
+        mRequestManager.setOnConsultationAddedListener(response -> {
+          new ConsResponseParser().execute(response);
+          System.out.println("RESPONSE = " + response);
+        });
+        mRequestManager.setOnConsultationFailureListener(error -> {
+          Log.d("ERROR", error.getMessage());
+        });
       });
-      mRequestManager.setOnConsultationFailureListener(error -> {
-        Log.d("ERROR", error.getMessage());
+      confirmDialog.setOnCancelClickedListener(() -> {
+        Toast.makeText(getActivity(), "Request canceled", Toast.LENGTH_LONG).show();
       });
     });
   }
@@ -177,4 +209,3 @@ public class AddFragment extends Fragment {
     this.onRequestClickedListener = listener;
   }
 }
-
