@@ -2,13 +2,14 @@ package com.example.telemedicine;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +35,8 @@ public class DoctorListFragment extends Fragment {
   private String mToken;
   private HttpRequestManager mRequestManager;
   private ProgressBar mProgressBar;
+  private ImageView mAnimationImageView;
+  private AnimationDrawable mAnimationDrawable;
 
   @Nullable
   @Override
@@ -46,6 +49,7 @@ public class DoctorListFragment extends Fragment {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     mProgressBar = view.findViewById(R.id.progress_indicator);
+//    mAnimationImageView = view.findViewById(R.id.animation_image_view);
     mRecyclerView = view.findViewById(R.id.doctor_list);
     mLayoutManager = new LinearLayoutManager(view.getContext());
     mRecyclerView.setLayoutManager(mLayoutManager);
@@ -57,6 +61,9 @@ public class DoctorListFragment extends Fragment {
   }
 
   private void performGetDoctorListRequest() {
+//    mAnimationImageView.setBackgroundResource(R.drawable.animation);
+//    mAnimationDrawable = (AnimationDrawable)mAnimationImageView.getBackground();
+//    mAnimationDrawable.start();
     mRequestManager = new HttpRequestManager();
     mRequestManager.getDoctorList(getActivity(), mToken);
     mRequestManager.setOnDoctorListLoadedListener((response) ->
@@ -111,6 +118,8 @@ public class DoctorListFragment extends Fragment {
     @Override
     protected void onPostExecute(Void aVoid) {
       super.onPostExecute(aVoid);
+//      mAnimationDrawable.stop();
+//      mAnimationImageView.setVisibility(View.INVISIBLE);
       mProgressBar.setVisibility(View.INVISIBLE);
       mAdapter = new RecyclerAdapter(getActivity(), mDoctorInfoList);
       mRecyclerView.setAdapter(mAdapter);

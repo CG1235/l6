@@ -90,7 +90,7 @@ public class AddFragment extends Fragment {
       confirmDialog.show(getActivity().getSupportFragmentManager(), "Dialog");
 
       confirmDialog.setOnConfirmClickedListener(() -> {
-        String dis = mDescriptionEdTxt.getText().toString();
+        String dis = mDiseaseEdTxt.getText().toString();
         dis.replaceAll("\\s+", "");
         ConsultationInfo info = new ConsultationInfo(1, mNameEdTxt.getText().toString(),
                 dis + " " + genKeyWord(),
@@ -202,7 +202,7 @@ public class AddFragment extends Fragment {
     int index = r.nextInt(high - low) + low;
 
     if (index >= keyWords.size())
-      --index;
+      index = 0;
 
     return keyWords.get(index);
   }

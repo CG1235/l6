@@ -3,6 +3,7 @@ package com.example.telemedicine;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.text.Html;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,7 @@ public class RequestDialog extends DialogFragment {
   @Override
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-    builder.setMessage("Confirm request?")
+    builder.setMessage(Html.fromHtml("<font color='#009688'>Confirm Request?</font>"))
             .setNegativeButton("Cancel", (dialogInterface, i) -> {
               if (onCancelClickedListener != null)
                 onCancelClickedListener.onCancelClicked();
