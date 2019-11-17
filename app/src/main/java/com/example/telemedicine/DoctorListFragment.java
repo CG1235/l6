@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +49,11 @@ public class DoctorListFragment extends Fragment {
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    mProgressBar = view.findViewById(R.id.progress_indicator);
-//    mAnimationImageView = view.findViewById(R.id.animation_image_view);
+//    mProgressBar = view.findViewById(R.id.progress_indicator);
+    mAnimationImageView = view.findViewById(R.id.animation_image_view);
+    mAnimationImageView.setBackgroundResource(R.drawable.animation);
+    mAnimationDrawable = (AnimationDrawable)mAnimationImageView.getBackground();
+
     mRecyclerView = view.findViewById(R.id.doctor_list);
     mLayoutManager = new LinearLayoutManager(view.getContext());
     mRecyclerView.setLayoutManager(mLayoutManager);
@@ -61,9 +65,7 @@ public class DoctorListFragment extends Fragment {
   }
 
   private void performGetDoctorListRequest() {
-//    mAnimationImageView.setBackgroundResource(R.drawable.animation);
-//    mAnimationDrawable = (AnimationDrawable)mAnimationImageView.getBackground();
-//    mAnimationDrawable.start();
+
     mRequestManager = new HttpRequestManager();
     mRequestManager.getDoctorList(getActivity(), mToken);
     mRequestManager.setOnDoctorListLoadedListener((response) ->
@@ -101,6 +103,7 @@ public class DoctorListFragment extends Fragment {
             double rating = obj.getDouble("Stars");
             String photo = obj.getString("Photo");
             mDoctorInfoList.add(new DoctorInfo(id, fullName, specialty, address, about, (float) rating, photo));
+            SystemClock.sleep(500);
           }
         } catch (JSONException e) {
           e.printStackTrace();
@@ -112,15 +115,16 @@ public class DoctorListFragment extends Fragment {
     @Override
     protected void onPreExecute() {
       super.onPreExecute();
-      mProgressBar.setVisibility(View.VISIBLE);
+//      mProgressBar.setVisibility(View.VISIBLE);
+      mAnimationDrawable.start();
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
       super.onPostExecute(aVoid);
-//      mAnimationDrawable.stop();
-//      mAnimationImageView.setVisibility(View.INVISIBLE);
-      mProgressBar.setVisibility(View.INVISIBLE);
+      mAnimationDrawable.stop();
+      mAnimationImageView.setVisibility(View.INVISIBLE);
+//      mProgressBar.setVisibility(View.INVISIBLE);
       mAdapter = new RecyclerAdapter(getActivity(), mDoctorInfoList);
       mRecyclerView.setAdapter(mAdapter);
     }

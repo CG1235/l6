@@ -84,8 +84,8 @@ public class LoginActivity extends AppCompatActivity {
           Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
           intent.putExtra(TOKEN_EXTRA_DATA, mToken);
           startActivity(intent);
-          mEmail.setText("");
-          mPassword.setText("");
+//          mEmail.setText("");
+//          mPassword.setText("");
 //          finish();
         });
         mRequestManager.setOnLoginFailedListener(error ->

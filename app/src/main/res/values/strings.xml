@@ -20,7 +20,7 @@
     <string name="full_name">Full Name</string>
     <string name="enter_full_name_hint">Your Full Name</string>
     <string name="birthday_field">Birthday</string>
-    <string name="birthday_input_hint">dd/mm/yy</string>
+    <string name="birthday_input_hint">yyyy/MM/dd</string>
     <string name="email_input_hint">Your Email</string>
     <string name="email_input_label">Email</string>
     <string name="phone_number_field_label">Phone Number</string>

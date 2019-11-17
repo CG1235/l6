@@ -70,9 +70,9 @@ public class AddFragment extends Fragment {
         String name = mNameEdTxt.getText().toString().trim();
         String disease = mDiseaseEdTxt.getText().toString().trim();
         String address = mLocationEdTxt.getText().toString().trim();
-        String description = mDescriptionEdTxt.getText().toString().trim();
+//        String description = mDescriptionEdTxt.getText().toString().trim();
         mRequset.setEnabled(!name.isEmpty() && !disease.isEmpty() &&
-                !address.isEmpty() && !description.isEmpty());
+                !address.isEmpty());
       }
 
       @Override
@@ -82,7 +82,7 @@ public class AddFragment extends Fragment {
     mNameEdTxt.addTextChangedListener(watcher);
     mDiseaseEdTxt.addTextChangedListener(watcher);
     mLocationEdTxt.addTextChangedListener(watcher);
-    mDescriptionEdTxt.addTextChangedListener(watcher);
+//    mDescriptionEdTxt.addTextChangedListener(watcher);
 
     mRequset.setOnClickListener(view1 -> {
 
