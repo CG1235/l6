@@ -32,14 +32,13 @@ public class AddFragment extends Fragment {
 
 
   private OnRequestClickedListener onRequestClickedListener;
-  private Button mRequset;
+  private Button mRequest;
   private EditText mNameEdTxt;
   private EditText mDiseaseEdTxt;
   private EditText mLocationEdTxt;
   private EditText mDescriptionEdTxt;
   private HttpRequestManager mRequestManager;
   private String mToken;
-  private DoctorInfo mDoctorInfo;
 
   @Nullable
   @Override
@@ -54,8 +53,8 @@ public class AddFragment extends Fragment {
     mDiseaseEdTxt = view.findViewById(R.id.disease_input);
     mLocationEdTxt = view.findViewById(R.id.location_input);
     mDescriptionEdTxt = view.findViewById(R.id.description_input);
-    mRequset = view.findViewById(R.id.add_fragment_request_button);
-    mRequset.setEnabled(false);
+    mRequest = view.findViewById(R.id.add_fragment_request_button);
+    mRequest.setEnabled(false);
 
     mRequestManager = new HttpRequestManager();
     SharedPreferences tokenSp = getActivity().getSharedPreferences(TOKEN_SHARED_PREFS, Context.MODE_PRIVATE);
@@ -71,7 +70,7 @@ public class AddFragment extends Fragment {
         String disease = mDiseaseEdTxt.getText().toString().trim();
         String address = mLocationEdTxt.getText().toString().trim();
 //        String description = mDescriptionEdTxt.getText().toString().trim();
-        mRequset.setEnabled(!name.isEmpty() && !disease.isEmpty() &&
+        mRequest.setEnabled(!name.isEmpty() && !disease.isEmpty() &&
                 !address.isEmpty());
       }
 
@@ -84,7 +83,7 @@ public class AddFragment extends Fragment {
     mLocationEdTxt.addTextChangedListener(watcher);
 //    mDescriptionEdTxt.addTextChangedListener(watcher);
 
-    mRequset.setOnClickListener(view1 -> {
+    mRequest.setOnClickListener(view1 -> {
 
       RequestDialog confirmDialog = new RequestDialog();
       confirmDialog.show(getActivity().getSupportFragmentManager(), "Dialog");
@@ -106,6 +105,10 @@ public class AddFragment extends Fragment {
         });
       });
       confirmDialog.setOnCancelClickedListener(() -> {
+        mNameEdTxt.setText("");
+        mDiseaseEdTxt.setText("");
+        mLocationEdTxt.setText("");
+        mDescriptionEdTxt.setText("");
         Toast.makeText(getActivity(), "Request canceled", Toast.LENGTH_LONG).show();
       });
     });
@@ -210,4 +213,5 @@ public class AddFragment extends Fragment {
   void setOnRequestClickedListener(OnRequestClickedListener listener){
     this.onRequestClickedListener = listener;
   }
+
 }

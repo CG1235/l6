@@ -1,5 +1,6 @@
 package com.example.telemedicine;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -91,10 +92,11 @@ public class DoctorInfoFragment extends Fragment implements OnMapReadyCallback {
     mPhotoBitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
   }
 
+  @SuppressLint("SetTextI18n")
   private void setData() {
     mPhoto.setImageBitmap(mPhotoBitmap);
     mNameTv.setText(mDoctorName);
-    mSpecialtyTv.setText(mDoctorSpecialty);
+    mSpecialtyTv.setText(mDoctorSpecialty + " ");
     mAboutTv.setText(mAbout);
     mAddressTv.setText(mDoctorAddress);
     mRatingBar.setRating(mDoctorRating);

@@ -3,8 +3,10 @@ package com.example.telemedicine;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -153,6 +155,20 @@ public class SignUpActivity extends AppCompatActivity {
     });
 
     mPhoto.setOnClickListener(view -> {
+
+      if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+              != PackageManager.PERMISSION_GRANTED) {
+
+        // Should we show an explanation?
+        if (shouldShowRequestPermissionRationale(
+                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+          // Explain to the user why we need to read the contacts
+        }
+
+        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                RESULT_LOAD_PHOTO);
+      }
+
       startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI),
               RESULT_LOAD_PHOTO);
     });

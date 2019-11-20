@@ -157,4 +157,5 @@
     <dimen name="d_info_name_margin_top">30dp</dimen>
     <dimen name="toolbar_arrow_w">30dp</dimen>
     <dimen name="toolbar_arrow_h">30dp</dimen>
+    <dimen name="animation_size">150dp</dimen>
 </resources>

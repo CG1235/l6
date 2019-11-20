@@ -52,8 +52,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_nav" />
 
-<!--        android:theme="@style/BottomNavigationView"-->
-
         <View
             android:id="@+id/shadow"
             android:layout_width="match_parent"

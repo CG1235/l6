@@ -1,5 +1,6 @@
 package com.example.telemedicine;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -63,6 +64,8 @@ public class NotificationFragment extends Fragment {
     mIndicator = view.findViewById(R.id.notif_doctor_info_rating_number);
     mDoctorPhoto = view.findViewById(R.id.notif_doctor_info_photo);
 
+    mRatingBar.setVisibility(View.INVISIBLE);
+
     fillTextViews();
 
     mDoctorInfoCv.setOnClickListener(view1 -> {
@@ -76,6 +79,7 @@ public class NotificationFragment extends Fragment {
     });
   }
 
+  @SuppressLint("SetTextI18n")
   private void fillTextViews() {
     SharedPreferences sp = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
 
@@ -87,7 +91,7 @@ public class NotificationFragment extends Fragment {
     String doctorSpecialty = sp.getString(DOCTOR_SPECIALTY, "");
     String doctorAddress = sp.getString(DOCTOR_ADDRESS, "");
     String doctorAbout = sp.getString(DOCTOR_ABOUT, "");
-    float doctorRating = sp.getFloat(DOCTOR_RATING, 1);
+    float doctorRating = sp.getFloat(DOCTOR_RATING, -1);
     String base64photo = sp.getString(DOCTOR_BASE_64_PHOTO, "");
 
     setArgs(doctorName, doctorSpecialty, doctorAddress, doctorAbout,
@@ -98,9 +102,15 @@ public class NotificationFragment extends Fragment {
     mLocation.setText(location);
     mDescription.setText(description);
     mDoctorName.setText(doctorName);
-    mDoctorSpecialtyTv.setText(doctorSpecialty);
-    mRatingBar.setRating(doctorRating);
-    mIndicator.setText(String.valueOf(mRatingBar.getRating()));
+    mDoctorSpecialtyTv.setText(doctorSpecialty + " ");
+
+    if (doctorRating != -1){
+      mRatingBar.setVisibility(View.VISIBLE);
+      mRatingBar.setRating(doctorRating);
+      mIndicator.setText(String.valueOf(mRatingBar.getRating()));
+    }else
+      mIndicator.setText("");
+
 
     if (!base64photo.equals("")){
       ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

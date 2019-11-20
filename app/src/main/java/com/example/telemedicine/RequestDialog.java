@@ -18,12 +18,12 @@ public class RequestDialog extends DialogFragment {
   @Override
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-    builder.setMessage(Html.fromHtml("<font color='#009688'>Confirm Request?</font>"))
-            .setNegativeButton("Cancel", (dialogInterface, i) -> {
+    builder.setMessage(Html.fromHtml("<font color='#00D9C7'>Confirm Request?</font>"))
+            .setNegativeButton(Html.fromHtml("<font color='#00D9C7'>Cancel</font>"), (dialogInterface, i) -> {
               if (onCancelClickedListener != null)
                 onCancelClickedListener.onCancelClicked();
             })
-            .setPositiveButton("Confirm", ((dialogInterface, i) -> {
+            .setPositiveButton(Html.fromHtml("<font color='#00D9C7'>Confirm</font>"), ((dialogInterface, i) -> {
               if(onConfirmClickedListener != null)
                 onConfirmClickedListener.onConfirmClicked();
             }));
